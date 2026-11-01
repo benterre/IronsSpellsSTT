@@ -109,8 +109,8 @@ Report versions, relevant options, reproduction steps and sanitized logs. Keep p
 | Platform | Project |
 |---|---|
 | GitHub | [benterre/IronsSpellsSTT](https://github.com/benterre/IronsSpellsSTT) |
-| CurseForge | Release link to be added after publication. |
-| Modrinth | [Iron's Spells Speech-to-spell](https://modrinth.com/project/irons-spells-speech-to-spell) — planned project page; public release link to be confirmed. |
+| CurseForge | [Iron's Spells Speech-to-spell](https://www.curseforge.com/minecraft/mc-mods/irons-spells-speech-to-spell/preview) |
+| Modrinth | [Iron's Spells Speech-to-spell](https://modrinth.com/project/irons-spells-speech-to-spell) |
 
 ## Build and contribute
 
