@@ -1,0 +1,32 @@
+[
+  {
+    "project": "Vrr7WtS4",
+    "version": [
+      "1.0.4",
+      "1.0.3",
+      "1.0.2",
+      "1.0.1",
+      "1.0.0"
+    ],
+    "filename": "jinxedlib-neoforge-1.21.1-1.0.4.jar",
+    "url": "https://cdn.modrinth.com/data/Vrr7WtS4/versions/xcKH5vNL/jinxedlib-neoforge-1.21.1-1.0.4.jar",
+    "sha512": "0c9044977e3203fb8f7f49417ca268d35ed3f7a39fcfd940e95c7142926cca8fb1f70a390e82b352ea70a2854f21d49f399f8931c13422b50adb38f2fe91d5d2"
+  },
+  {
+    "project": "nTApwmMc",
+    "version": [
+      "1.0.1",
+      "1.0.0"
+    ],
+    "filename": "wind_spellbooks-1.0.1.jar",
+    "url": "https://cdn.modrinth.com/data/nTApwmMc/versions/hOrukM8m/wind_spellbooks-1.0.1.jar",
+    "sha512": "745111739ad0e64cdfbeaa7ad1e3d9a39c85aea69d31e10137673e3dbfb9bce861fbbcd819b9b8c8d6b111ba4ab6d55302967c2b081755a211239823d926feef"
+  },
+  {
+    "project": "VYhEIBtL",
+    "version": "0.6.0",
+    "filename": "ironsspellsandunstablespellbooks-0.6.0.jar",
+    "url": "https://cdn.modrinth.com/data/VYhEIBtL/versions/P00uc9cs/ironsspellsandunstablespellbooks-0.6.0.jar",
+    "sha512": "bba2be92f7b8a9cb28175237e720fb36b736663fc56cd2a71b7b0d35ea772f6dd920914d05e2c0015e742650886f9702104e0992dd66c79968c080e4af13bf1b"
+  }
+]

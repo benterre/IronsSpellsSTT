@@ -1,0 +1,74 @@
+[
+  {
+    "directory": "libs",
+    "filename": "irons_spellbooks-1.21.1-3.16.3.jar",
+    "url": "https://cdn.modrinth.com/data/s4OWxYQQ/versions/slKLosTb/irons_spellbooks-1.21.1-3.16.3.jar",
+    "sha256": "55A290DB9B966E0C5D2F5C051D50775F3DB6375CDB52730C4DA528BCF5D5DAA0"
+  },
+  {
+    "directory": "libs",
+    "filename": "geckolib-neoforge-1.21.1-4.9.3.jar",
+    "url": "https://cdn.modrinth.com/data/8BmcQJ2H/versions/Grwn5rUB/geckolib-neoforge-1.21.1-4.9.3.jar",
+    "sha256": "20A1995E4074F387FF549E2C57EA79DD7D41EE83C6AFB9DD6A6E840E592D1C47"
+  },
+  {
+    "directory": "libs",
+    "filename": "player-animation-lib-forge-2.0.4+1.21.1.jar",
+    "url": "https://cdn.modrinth.com/data/gedNE4y2/versions/HJZB6bmA/player-animation-lib-forge-2.0.4%2B1.21.1.jar",
+    "sha256": "DBE5DE45F5CD60C0E5E47AF14E6D564534A98456E973CF670CB881F6938EEE92"
+  },
+  {
+    "directory": "libs",
+    "filename": "curios-neoforge-9.5.1+1.21.1.jar",
+    "url": "https://cdn.modrinth.com/data/vvuO3ImH/versions/yohfFbgD/curios-neoforge-9.5.1%2B1.21.1.jar",
+    "sha256": "A45DF2125C26219974ABA7507FFC9AFE7B83ACC941A386AF3FAACB1CC0056FDE"
+  },
+  {
+    "directory": "libs",
+    "filename": "irons_lib-1.21.1-2.2.0.jar",
+    "url": "https://cdn.modrinth.com/data/9nfaJPtX/versions/lUwUKYPl/irons_lib-1.21.1-2.2.0.jar",
+    "sha256": "9E086A4D449147BAAD6468B11FD34924A905D9CB6818C962676AA0C4589DCC3C"
+  },
+  {
+    "directory": "libs",
+    "filename": "voicechat-neoforge-1.21.1-2.6.24.jar",
+    "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/qqNx1Yjm/voicechat-neoforge-1.21.1-2.6.24.jar",
+    "sha256": "7AF3BBC34948CC0F833946FD4B0D2DB7ED608F67A12702BE4DF6F731A4B66290"
+  },
+  {
+    "directory": "test-mods",
+    "filename": "spells_gone_wrong-1.21.1-2.0.1.jar",
+    "url": "https://cdn.modrinth.com/data/4ugLsKOh/versions/wXXqyskO/spells_gone_wrong-1.21.1-2.0.1.jar",
+    "sha256": "DD339C173BF52A0EF2EF471C5F1DEA7D7BBE23B1CD01B6FAD5B9394CE64B3427"
+  },
+  {
+    "directory": "test-mods",
+    "filename": "gametechbcs_spellbooks-3.0.0-1.21.1.jar",
+    "url": "https://mediafilez.forgecdn.net/files/6312/18/gametechbcs_spellbooks-3.0.0-1.21.1.jar",
+    "sha256": "E8E5E8F605D08EC56F64DE1E54DCECDB2DC95EB4D14F910DB5A5B80353346D83"
+  },
+  {
+    "directory": "test-mods",
+    "filename": "jinxedlib-neoforge-1.21.1-1.0.4.jar",
+    "url": "https://cdn.modrinth.com/data/Vrr7WtS4/versions/xcKH5vNL/jinxedlib-neoforge-1.21.1-1.0.4.jar",
+    "sha256": "6C49A583E23C50CAE21CD3530C96329C7B3C0C180F8AAA7047E0B5770CC70630"
+  },
+  {
+    "directory": "test-mods",
+    "filename": "wind_spellbooks-1.0.1.jar",
+    "url": "https://cdn.modrinth.com/data/nTApwmMc/versions/hOrukM8m/wind_spellbooks-1.0.1.jar",
+    "sha256": "6C52F79F224FC060496B31FF1ACE72D0FD6C4754E4ECBFB6EEDB359B9D91B884"
+  },
+  {
+    "directory": "test-mods",
+    "filename": "ironsspellsandunstablespellbooks-0.6.0.jar",
+    "url": "https://cdn.modrinth.com/data/VYhEIBtL/versions/P00uc9cs/ironsspellsandunstablespellbooks-0.6.0.jar",
+    "sha256": "1A7FAB48A660530160D7E350791527B73DFE0B297D33BC17DAB2BA90E9C9492D"
+  },
+  {
+    "directory": "test-mods",
+    "filename": "gtbcs_spell_lib-2.2.0-1.21.1.jar",
+    "url": "https://cdn.modrinth.com/data/wXoQ9BqX/versions/309MoFNN/gtbcs_spell_lib-2.2.0-1.21.1.jar",
+    "sha256": "A2A020B85ABE9E5AD2CE9E760DB57E9C79AA57CF6DAE56BBFD4EB0ED5D5928F9"
+  }
+]

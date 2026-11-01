@@ -1,0 +1,68 @@
+[
+  {
+    "file": "sts-forge-1.18.2-0.4.0.jar",
+    "minecraft": "1.18.2",
+    "loader": "forge",
+    "java": 17,
+    "bytes": 251625,
+    "sha256": "54F62DD2625E4D5F3DB5145C84B690A49207D3173556D535E156D6DBA36282C2",
+    "source": "ports/legacy/build/libs/sts-forge-1.18.2-0.4.0.jar",
+    "voiceEffectsDefault": false,
+    "voiceEffectsStatus": "work in progress"
+  },
+  {
+    "file": "sts-forge-1.19.2-0.4.0.jar",
+    "minecraft": "1.19.2",
+    "loader": "forge",
+    "java": 17,
+    "bytes": 251415,
+    "sha256": "B6ED5EDE91AB88E06758F21BA1C04256612C7E4DD71A8A7B1E1C89CFDD1551CA",
+    "source": "ports/legacy/build/libs/sts-forge-1.19.2-0.4.0.jar",
+    "voiceEffectsDefault": false,
+    "voiceEffectsStatus": "work in progress"
+  },
+  {
+    "file": "sts-forge-1.20.1-0.4.0.jar",
+    "minecraft": "1.20.1",
+    "loader": "forge",
+    "java": 17,
+    "bytes": 247740,
+    "sha256": "D3C0C92E4AFEF5EF28DEDE0C1A0612E05B18398464F020D1376F9C5952F0A228",
+    "source": "ports/legacy/build/libs/sts-forge-1.20.1-0.4.0.jar",
+    "voiceEffectsDefault": false,
+    "voiceEffectsStatus": "work in progress"
+  },
+  {
+    "file": "sts-neoforge-1.20.1-0.4.0.jar",
+    "minecraft": "1.20.1",
+    "loader": "neoforge",
+    "java": 17,
+    "bytes": 247740,
+    "sha256": "D3C0C92E4AFEF5EF28DEDE0C1A0612E05B18398464F020D1376F9C5952F0A228",
+    "source": "ports/legacy/build/libs/sts-neoforge-1.20.1-0.4.0.jar",
+    "voiceEffectsDefault": false,
+    "voiceEffectsStatus": "work in progress"
+  },
+  {
+    "file": "sts-neoforge-1.21-0.4.0.jar",
+    "minecraft": "1.21",
+    "loader": "neoforge",
+    "java": 21,
+    "bytes": 239794,
+    "sha256": "F2090E7A0E8AB783AD2513EC9DFE11B4CFFF2316CED6EEEE868CE5699C1E4E37",
+    "source": "ports/neo/build/libs/sts-neoforge-1.21-0.4.0.jar",
+    "voiceEffectsDefault": false,
+    "voiceEffectsStatus": "work in progress"
+  },
+  {
+    "file": "sts-neoforge-1.21.1-0.4.0.jar",
+    "minecraft": "1.21.1",
+    "loader": "neoforge",
+    "java": 21,
+    "bytes": 208740,
+    "sha256": "C48C1FB5E705FF44FC24CE9F0CB92DAB24D2209E49A0D9963390479E74A64D8F",
+    "source": "build/libs/sts-0.4.0.jar",
+    "voiceEffectsDefault": false,
+    "voiceEffectsStatus": "work in progress"
+  }
+]

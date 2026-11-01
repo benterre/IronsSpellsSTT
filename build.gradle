@@ -1,0 +1,214 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.148'
+    id 'idea'
+}
+version = mod_version
+group = 'dev.sts'
+base { archivesName = 'sts' }
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+repositories {
+    mavenCentral()
+    maven { url = 'https://maven.maxhenkel.de/repository/public' }
+}
+def gameTestsEnabled = providers.gradleProperty('gameTests').isPresent()
+if (gameTestsEnabled) {
+    sourceSets { gameTest }
+    sourceSets.gameTest.compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+    sourceSets.gameTest.runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
+}
+def clientProbeEnabled = providers.gradleProperty('clientProbe').isPresent()
+if (clientProbeEnabled) {
+    sourceSets.create('clientProbe')
+    sourceSets.clientProbe.compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+    sourceSets.clientProbe.runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
+}
+neoForge {
+    version = project.neo_version
+    runs {
+        client {
+            client()
+            gameDirectory = file('run/client')
+            programArguments.addAll '--width', '1280', '--height', '800'
+        }
+        server {
+            server()
+            gameDirectory = file('run/server')
+            programArgument '--nogui'
+        }
+        if (gameTestsEnabled) {
+            gameTestServer {
+                type = 'gameTestServer'
+                gameDirectory = file('run/gametest')
+                systemProperty 'neoforge.enabledGameTestNamespaces', 'sts'
+            }
+        }
+        if (clientProbeEnabled) {
+            clientProbe {
+                client()
+                gameDirectory = file('run/client-probe')
+                programArguments.addAll '--width', '1280', '--height', '800'
+                systemProperty 'sts.clientProbe', 'true'
+                systemProperty 'sts.probeScale', providers.gradleProperty('probeScale').getOrElse('2')
+            }
+        }
+        configureEach { logLevel = org.slf4j.event.Level.INFO }
+    }
+    mods { sts {
+        sourceSet(sourceSets.main)
+        if (gameTestsEnabled) sourceSet(sourceSets.gameTest)
+        if (clientProbeEnabled) sourceSet(sourceSets.clientProbe)
+    } }
+}
+dependencies {
+    implementation fileTree('libs') { include '*.jar'; exclude 'voicechat-*.jar'; exclude 'irons_spellbooks-*.jar' }
+    compileOnly fileTree('libs') { include 'irons_spellbooks-*.jar' }
+    runtimeOnly files(providers.gradleProperty('ironRuntimeJar').getOrElse('libs/irons_spellbooks-1.21.1-3.16.3.jar'))
+    if (providers.gradleProperty('legacyDependencies').isPresent()) {
+        runtimeOnly fileTree('.research/compatibility/dependencies') { include '*.jar' }
+    }
+    compileOnly 'de.maxhenkel.voicechat:voicechat-api:2.6.24'
+    if (!providers.gradleProperty('noVoiceChat').isPresent()) {
+        runtimeOnly files(providers.gradleProperty('voiceRuntimeJar').getOrElse('libs/voicechat-neoforge-1.21.1-2.6.24.jar'))
+    }
+    if (providers.gradleProperty('addons').isPresent()) {
+        runtimeOnly fileTree('test-mods') { include '*.jar' }
+    }
+    testImplementation platform('org.junit:junit-bom:5.11.4')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'de.maxhenkel.voicechat:voicechat-api:2.6.24'
+    // Wire regressions need the real serializer even when the game run excludes SVC.
+    testRuntimeOnly files('libs/voicechat-neoforge-1.21.1-2.6.24.jar')
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+sourceSets.test.compileClasspath += sourceSets.main.compileClasspath
+sourceSets.test.runtimeClasspath += sourceSets.main.runtimeClasspath
+tasks.named('test', Test) { useJUnitPlatform() }
+if (gameTestsEnabled) {
+    tasks.register('gameTestFixture', Jar) {
+        dependsOn classes, gameTestClasses
+        archiveFileName = 'sts-integration-phase5.jar'
+        destinationDirectory = file('.research/compatibility')
+        from sourceSets.main.output
+        from sourceSets.gameTest.output
+    }
+    tasks.register('prepareCompatibility') {
+        dependsOn 'gameTestClasses', 'processResources', 'prepareGameTestServerRun', 'writeGameTestServerLegacyClasspath'
+        doLast {
+            def launch = tasks.named('runGameTestServer', JavaExec).get()
+            def folder = file('build/compatibility-launch')
+            folder.mkdirs()
+            new File(folder, 'mod-classes.txt').text = (launch.environment.get('MOD_CLASSES') ?: '').toString()
+            new File(folder, 'extra-vm.txt').text = launch.jvmArgumentProviders.collectMany { it.asArguments().toList() }.join('\n')
+            new File(folder, 'classpath.txt').text = launch.classpath.files.collect { it.absolutePath }.join('\n')
+        }
+    }
+}
+tasks.matching { it.name == 'runGameTestServer' }.configureEach {
+    doLast {
+        def log = file('run/gametest/logs/latest.log')
+        if (!log.exists() || !(log.text =~ /All \d+ required tests passed/)) {
+            throw new GradleException('GameTests did not report successful completion; inspect run/gametest/logs/latest.log')
+        }
+        def folder = file('build/compatibility-launch')
+        folder.mkdirs()
+        new File(folder, 'classpath.txt').text = classpath.files.collect { it.absolutePath }.join('\n')
+    }
+}
+tasks.register('speechBenchmark', JavaExec) {
+    group = 'verification'
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.sts.speech.SpeechBenchmark'
+}
+tasks.register('broadcastBenchmark', JavaExec) {
+    group = 'verification'
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.sts.broadcast.BroadcastBenchmark'
+}
+
+tasks.register('voiceEffectsPreview', JavaExec) {
+    group = 'verification'
+    description = 'Process ten original takes through the shipping effects for listening comparison.'
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.sts.speech.VoiceEffectsPreview'
+    args providers.gradleProperty('recordingInput').getOrElse('recordings/incoming'),
+            providers.gradleProperty('auditionOutput').getOrElse('recordings/audition-reverb-v2')
+}
+tasks.register('voiceApiCompatibility', JavaExec) {
+    group = 'verification'
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.sts.voice.VoiceApiCompatibility'
+    args providers.gradleProperty('voiceCatalogDirectory').getOrElse('.research/compatibility/jars'), sourceSets.main.output.classesDirs.singleFile.absolutePath,
+            providers.gradleProperty('voiceCatalogReport').getOrElse('docs/evidence/compatibility/voice-api.tsv')
+    if(providers.gradleProperty('voiceApiOnly').isPresent()) args '--api-only'
+    if(providers.gradleProperty('voiceCatalog').isPresent()) args '--catalog'
+}
+tasks.register('ironApiCompatibility',JavaExec) {
+    group='verification'
+    dependsOn testClasses
+    classpath=sourceSets.test.runtimeClasspath
+    mainClass='dev.sts.spell.IronApiCompatibility'
+    args '.research/publication/catalog-jars','.research/publication/iron-api-all.tsv'
+}
+tasks.register('speechDataset', JavaExec) {
+    group = 'verification'
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.sts.speech.SpeechDatasetTool'
+    def datasetOperation = providers.gradleProperty('datasetOperation').getOrElse('evaluate-revised')
+    args datasetOperation,
+            providers.gradleProperty('datasetManifest').getOrElse('recordings/prepared/manifest.tsv')
+    if (providers.gradleProperty('datasetOutput').isPresent()) {
+        args providers.gradleProperty('datasetOutput').get()
+    } else if (datasetOperation != 'import') {
+        args providers.gradleProperty('negativeSplit').getOrElse('development')
+    }
+    if (datasetOperation != 'import') {
+        args providers.gradleProperty('datasetEnrollment').getOrElse('7')
+    }
+}
+tasks.register('speechPrepare', JavaExec) {
+    group = 'verification'
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.sts.speech.SpeechDatasetPrepare'
+    args providers.gradleProperty('recordingInput').getOrElse('recordings/incoming'),
+            providers.gradleProperty('recordingOutput').getOrElse('recordings/prepared'),
+            providers.gradleProperty('negativeSplit').getOrElse('development')
+}
+tasks.register('speechRuntimeEvaluation', JavaExec) {
+    group = 'verification'
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.sts.speech.SpeechRuntimeEvaluation'
+    args providers.gradleProperty('datasetManifest').getOrElse('recordings/prepared/manifest.tsv'),
+            providers.gradleProperty('evaluationLibrary').getOrElse('build/speech-runtime/library')
+}
+tasks.register('speechStreamEvaluation', JavaExec) {
+    group = 'verification'
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.sts.speech.SpeechStreamEvaluation'
+    args providers.gradleProperty('datasetManifest').getOrElse('recordings/prepared/manifest.tsv'),
+            providers.gradleProperty('recordingInput').getOrElse('recordings/incoming'),
+            providers.gradleProperty('streamOutput').getOrElse('build/speech-stream/development-baseline'),
+            providers.gradleProperty('streamEnrollment').getOrElse('7'),
+            providers.gradleProperty('streamMatcher').getOrElse('baseline'),
+            providers.gradleProperty('streamSplit').getOrElse('development'),
+            providers.gradleProperty('streamCalibration').getOrElse('baseline')
+}
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+tasks.named('processResources', ProcessResources) {
+    from('icon.png')
+    inputs.property 'version', project.version
+    filesMatching('META-INF/neoforge.mods.toml') { expand version: project.version }
+}
+tasks.named('jar', Jar) {
+    from('LICENSE') { into 'META-INF' }
+    from('AI_PROMPTS.md') { into 'META-INF' }
+}
+idea { module { downloadSources = true } }

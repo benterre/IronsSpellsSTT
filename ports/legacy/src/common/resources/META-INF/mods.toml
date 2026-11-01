@@ -1,0 +1,37 @@
+modLoader="javafml"
+loaderVersion="[${forge},)"
+license="MIT"
+issueTrackerURL="https://github.com/benterre/IronsSpellsSTT/issues"
+[[mods]]
+modId="sts"
+version="${version}"
+displayName="Iron's Spells STT"
+logoFile="icon.png"
+authors="benterre"
+credits="Developed with Codex using GPT-6.1 Sol (Extra High); see AI_PROMPTS.md."
+displayURL="https://github.com/benterre/IronsSpellsSTT"
+description='''Personal voice incantations for Iron's Spells 'n Spellbooks, using Simple Voice Chat and local acoustic templates.'''
+[[dependencies.sts]]
+modId="forge"
+mandatory=true
+versionRange="[${forge},)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.sts]]
+modId="minecraft"
+mandatory=true
+versionRange="[${minecraft}]"
+ordering="NONE"
+side="BOTH"
+[[dependencies.sts]]
+modId="irons_spellbooks"
+mandatory=true
+versionRange="[0,)"
+ordering="AFTER"
+side="BOTH"
+[[dependencies.sts]]
+modId="voicechat"
+mandatory=false
+versionRange="[${minecraft}-${voiceMinimum},)"
+ordering="AFTER"
+side="BOTH"

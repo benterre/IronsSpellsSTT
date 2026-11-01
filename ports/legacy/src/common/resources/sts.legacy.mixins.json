@@ -1,0 +1,8 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.sts.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": ["ClassicCastMixin", "ModernCastMixin"],
+  "injectors": { "defaultRequire": 1 }
+}

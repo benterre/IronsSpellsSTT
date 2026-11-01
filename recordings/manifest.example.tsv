@@ -1,0 +1,11 @@
+# Copy this file to incoming/manifest.tsv; each folder contains ten mono PCM16 WAV files.
+irons_spellbooks:fireball	fireball
+irons_spellbooks:firebolt	firebolt
+irons_spellbooks:heal	heal
+irons_spellbooks:teleport	teleport
+irons_spellbooks:frostwave	frostwave
+irons_spellbooks:lightning_bolt	lightning_bolt
+irons_spellbooks:blood_step	blood_step
+irons_spellbooks:gust	gust
+irons_spellbooks:shield	shield
+irons_spellbooks:magic_missile	magic_missile

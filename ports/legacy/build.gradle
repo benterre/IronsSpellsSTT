@@ -1,0 +1,115 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev.legacyforge' version '2.0.148'
+}
+def workspaceRoot = file('../..')
+def sharedProperties = new Properties()
+file('../../gradle.properties').withInputStream { sharedProperties.load(it) }
+version = sharedProperties.getProperty('mod_version')
+group = 'dev.sts'
+def targetMc = providers.gradleProperty('targetMc').getOrElse('1.20.1')
+def legacyNeo=providers.gradleProperty('legacyNeo').isPresent()
+def dependencyProfile=providers.gradleProperty('dependencyProfile').getOrElse('')
+if(dependencyProfile && !(dependencyProfile==~ /[a-z0-9-]+/)) throw new GradleException('Invalid dependency profile')
+def targetRun=targetMc+(legacyNeo?'-neoforge':'')+(dependencyProfile?'-'+dependencyProfile:'')
+if(legacyNeo&&targetMc!='1.20.1') throw new GradleException('Legacy NeoForge exists only for Minecraft 1.20.1')
+def forgeVersions = ['1.18.2':'40.3.12', '1.19.2':'43.5.0', '1.20.1':'47.4.0']
+if (!forgeVersions.containsKey(targetMc)) throw new GradleException('Unsupported legacy target: '+targetMc)
+base { archivesName = 'sts-'+(legacyNeo?'neoforge':'forge')+'-'+targetMc }
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+def dependencyRoot = file('../../.research/ports/'+targetMc+'-'+(legacyNeo?'neoforge':'forge')+(dependencyProfile?'-'+dependencyProfile:''))
+def voiceOverride=providers.gradleProperty('voiceRuntimeJar').map { file(it) }.orNull
+repositories {
+    mavenCentral()
+    maven { url='https://maven.maxhenkel.de/repository/public' }
+    flatDir { dirs dependencyRoot }
+    if(voiceOverride) flatDir { dirs voiceOverride.parentFile }
+}
+def generatedJava = layout.buildDirectory.dir('generated/portedJava/'+targetMc)
+sourceSets.main.java.setSrcDirs([generatedJava])
+sourceSets.main.resources.setSrcDirs(['src/common/resources', 'src/'+targetMc+'/resources', '../../src/main/resources'])
+sourceSets.main.resources.exclude('META-INF/neoforge.mods.toml')
+apply from: 'port-sources.gradle'
+def gameTestsEnabled = providers.gradleProperty('gameTests').isPresent()
+def clientProbeEnabled = providers.gradleProperty('clientProbe').isPresent()
+if (gameTestsEnabled) {
+    sourceSets { gameTest }
+    sourceSets.gameTest.compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+    sourceSets.gameTest.runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
+    sourceSets.gameTest.java.setSrcDirs([layout.buildDirectory.dir('generated/portedGameTests/'+targetMc)])
+    sourceSets.gameTest.resources.srcDir('../../src/gameTest/resources')
+    tasks.named('compileGameTestJava') { dependsOn 'generatePortGameTestSources' }
+    tasks.named('processGameTestResources') {
+        eachFile { details -> details.path=details.path.replace('data/sts/structure/','data/sts/structures/') }
+        includeEmptyDirs=false
+    }
+}
+if (clientProbeEnabled) {
+    sourceSets.create('clientProbe')
+    sourceSets.clientProbe.compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+    sourceSets.clientProbe.runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
+    sourceSets.clientProbe.java.setSrcDirs([layout.buildDirectory.dir('generated/portedClientProbe/'+targetMc)])
+    tasks.named('compileClientProbeJava') { dependsOn 'generatePortClientProbeSources' }
+}
+tasks.named('compileJava') { dependsOn 'generatePortSources' }
+legacyForge {
+    enable {
+        if(legacyNeo) neoForgeVersion=targetMc+'-'+providers.gradleProperty('legacyNeoVersion').getOrElse('47.1.106')
+        else forgeVersion = targetMc+'-'+providers.gradleProperty('forgeVersion').getOrElse(forgeVersions[targetMc])
+        disableRecompilation = true
+    }
+    runs {
+        client { client(); gameDirectory=file('run/'+targetRun+'/client'); programArguments.addAll('--width','1280','--height','800') }
+        server { server(); gameDirectory=file('run/'+targetRun+'/server'); programArgument '--nogui' }
+        gameTestServer { type='gameTestServer'; gameDirectory=file('run/'+targetRun+'/gametest'); systemProperty 'forge.enabledGameTestNamespaces','sts' }
+        if (clientProbeEnabled) {
+            clientProbe {
+                client(); gameDirectory=file('run/'+targetRun+'/client-probe')
+                programArguments.addAll('--width','1280','--height','800')
+                systemProperty 'sts.clientProbe','true'
+                systemProperty 'sts.probeScale',providers.gradleProperty('probeScale').getOrElse('2')
+            }
+        }
+    }
+    mods { sts {
+        sourceSet sourceSets.main
+        if (gameTestsEnabled) sourceSet sourceSets.gameTest
+        if (clientProbeEnabled) sourceSet sourceSets.clientProbe
+    } }
+}
+mixin { config 'sts.legacy.mixins.json' }
+dependencies {
+    fileTree(dependencyRoot).matching { include '*.jar' }.files.each { dependencyJar ->
+        if(voiceOverride&&dependencyJar.name.startsWith('voicechat-')) return
+        // Module notation lets the legacy remapper attach its mapping constraint correctly on Gradle 9.
+        def coordinate = 'local.sts:'+dependencyJar.name.substring(0,dependencyJar.name.length()-4)+':pinned'
+        if (dependencyJar.name.startsWith('voicechat-')) modRuntimeOnly coordinate
+        else modImplementation coordinate
+    }
+    if(voiceOverride) modRuntimeOnly 'local.sts:'+voiceOverride.name.substring(0,voiceOverride.name.length()-4)+':pinned'
+    compileOnly 'de.maxhenkel.voicechat:voicechat-api:2.6.24'
+}
+tasks.named('processResources') {
+    from('../../icon.png')
+    inputs.property 'version', project.version
+    inputs.property 'minecraft', targetMc
+    inputs.property 'forge', forgeVersions[targetMc]
+    filesMatching('META-INF/mods.toml') { expand version:project.version, minecraft:targetMc, forge:forgeVersions[targetMc].tokenize('.')[0], voiceMinimum:targetMc=='1.20.1'?'2.4.9':'2.3.2' }
+    filesMatching('pack.mcmeta') {
+        filter { line -> line.replaceAll('"pack_format"\\s*:\\s*\\d+', '"pack_format":'+(['1.18.2':8,'1.19.2':9,'1.20.1':15][targetMc])) }
+    }
+    eachFile { details -> details.path=details.path.replace('data/sts/tags/item/','data/sts/tags/items/') }
+}
+tasks.named('jar') {
+    manifest.attributes('MixinConfigs':'sts.legacy.mixins.json')
+    from('../../LICENSE') { into 'META-INF' }
+    from('../../AI_PROMPTS.md') { into 'META-INF' }
+}
+tasks.withType(JavaCompile).configureEach { options.encoding='UTF-8' }
+tasks.matching { it.name=='runGameTestServer' }.configureEach {
+    doLast {
+        def log=file('run/'+targetRun+'/gametest/logs/latest.log')
+        if (!log.exists() || !(log.text =~ /All \d+ required tests passed/))
+            throw new GradleException('Legacy GameTests did not report success; inspect '+log)
+    }
+}

@@ -1,0 +1,18 @@
+{
+  "key.categories.sts": "Speech to Spells",
+  "key.sts.grimoire": "Open Voice Grimoire",
+  "screen.sts.grimoire": "Voice Grimoire",
+  "screen.sts.search": "Find a spell...",
+  "screen.sts.owned": "Your spells",
+  "screen.sts.record": "Record a take",
+  "screen.sts.cancel": "Cancel take",
+  "screen.sts.listening_on": "Casting: on",
+  "screen.sts.listening_off": "Casting: off",
+  "screen.sts.no_spells": "Equip a spellbook or carry spell scrolls to add their spells here.",
+  "screen.sts.no_matches": "No spells match your search.",
+  "screen.sts.choose_spell": "Choose a spell on the left. Record ten clear examples of your own incantation.",
+  "screen.sts.takes": "Voice examples: %s / 10",
+  "screen.sts.equipped": "Cast available · max Lv %s",
+  "screen.sts.train_only": "Training only · max Lv %s",
+  "screen.sts.record_hint": "Record, use your voice chat key, then pause."
+}

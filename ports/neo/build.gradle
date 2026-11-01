@@ -1,0 +1,109 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.148'
+}
+def sharedProperties=new Properties()
+file('../../gradle.properties').withInputStream { sharedProperties.load(it) }
+version=sharedProperties.getProperty('mod_version')
+group='dev.sts'
+base { archivesName='sts-neoforge-1.21' }
+java.toolchain.languageVersion=JavaLanguageVersion.of(21)
+repositories { mavenCentral();maven { url='https://maven.maxhenkel.de/repository/public' } }
+def generated=layout.buildDirectory.dir('generated/portedJava')
+sourceSets.main.java.setSrcDirs([generated])
+sourceSets.main.resources.setSrcDirs(['../../src/main/resources'])
+def gameTestsEnabled=providers.gradleProperty('gameTests').isPresent()
+def clientProbeEnabled=providers.gradleProperty('clientProbe').isPresent()
+if(gameTestsEnabled) {
+    sourceSets { gameTest }
+    sourceSets.gameTest.compileClasspath+=sourceSets.main.output+sourceSets.main.compileClasspath
+    sourceSets.gameTest.runtimeClasspath+=sourceSets.main.output+sourceSets.main.runtimeClasspath
+    sourceSets.gameTest.java.setSrcDirs([layout.buildDirectory.dir('generated/portedTests')])
+    sourceSets.gameTest.resources.srcDir('../../src/gameTest/resources')
+}
+if(clientProbeEnabled) {
+    sourceSets.create('clientProbe')
+    sourceSets.clientProbe.java.srcDir('../../src/clientProbe/java')
+    sourceSets.clientProbe.compileClasspath+=sourceSets.main.output+sourceSets.main.compileClasspath
+    sourceSets.clientProbe.runtimeClasspath+=sourceSets.main.output+sourceSets.main.runtimeClasspath
+}
+neoForge {
+    version=providers.gradleProperty('neo_version').getOrElse('21.0.167')
+    runs {
+        client { client();gameDirectory=file('run/client') }
+        server { server();gameDirectory=file('run/server');programArgument '--nogui' }
+        if(gameTestsEnabled) gameTestServer { type='gameTestServer';gameDirectory=file('run/gametest');systemProperty 'neoforge.enabledGameTestNamespaces','sts' }
+        if(clientProbeEnabled) clientProbe { client();gameDirectory=file('run/client-probe');programArguments.addAll('--width','1280','--height','800');systemProperty 'sts.clientProbe','true';systemProperty 'sts.probeScale','2' }
+    }
+    mods { sts {
+        sourceSet sourceSets.main
+        if(gameTestsEnabled) sourceSet sourceSets.gameTest
+        if(clientProbeEnabled) sourceSet sourceSets.clientProbe
+    } }
+}
+dependencies {
+    implementation fileTree('../../.research/ports/1.21-neoforge') { include '*.jar';exclude 'voicechat-*.jar' }
+    runtimeOnly providers.gradleProperty('voiceRuntimeJar').isPresent()?files(providers.gradleProperty('voiceRuntimeJar').get()):fileTree('../../.research/ports/1.21-neoforge') {include 'voicechat-*.jar'}
+    compileOnly 'de.maxhenkel.voicechat:voicechat-api:2.6.24'
+}
+tasks.register('generatePortSources') {
+    inputs.dir('../../src/main/java');inputs.file('../legacy/src/common/java/dev/sts/compat/IronAccess.java')
+    outputs.dir(generated)
+    doLast {
+        def output=generated.get().asFile
+        fileTree('../../src/main/java').matching { include '**/*.java' }.each { source ->
+            def relative=file('../../src/main/java').toPath().relativize(source.toPath()).toString()
+            def text=source.getText('UTF-8')
+                    .replaceAll('io\\.redspace\\.ironsspellbooks\\.api\\.(?:events|magic|registry|spells|util)\\.(SpellOnCastEvent|MagicData|SpellSelectionManager|SpellRegistry|AbstractSpell|CastSource|ISpellContainer|SpellData|Utils)', 'dev.sts.compat.IronAccess.$1')
+                    .replace('SpellRegistry.REGISTRY.get(', 'SpellRegistry.REGISTRY.get().getValue(')
+                    .replace('import io.redspace.ironsspellbooks.api.item.ISpellbook;', 'import dev.sts.compat.IronAccess;')
+                    .replace('import io.redspace.ironsspellbooks.item.Scroll;', '')
+                    .replace('import io.redspace.ironsspellbooks.config.ServerConfigs;', 'import dev.sts.compat.IronAccess;')
+                    .replace('player.isCreative() && !ServerConfigs.CREATIVE_MANA_COST.get()', 'player.isCreative() && !IronAccess.creativeCharges()')
+                    .replace('held.getItem() instanceof Scroll', 'IronAccess.isScroll(held)')
+                    .replace('stack.getItem() instanceof Scroll scroll', 'IronAccess.isScroll(stack)')
+                    .replace('stack.getItem() instanceof Scroll', 'IronAccess.isScroll(stack)')
+                    .replace('stack.getItem() instanceof ISpellbook', 'IronAccess.isBook(stack)')
+                    .replace('book.getItem() instanceof ISpellbook', 'IronAccess.isBook(book)')
+                    .replace('scroll.use(player.level(), player, hand);', 'stack.getItem().use(player.level(), player, hand);')
+            if(relative.endsWith('UnpreparedCasting.java')) text=text.replace('spell.getManaCost(level)', 'spell.getManaCost(level, player)')
+            if(relative.endsWith('StsMod.java')) text=text.replaceAll('(?m)^.*EVENT_BUS.addListener\\(EventPriority.LOWEST, false, SpellOnCastEvent.class,.*\\R','')
+                    .replace('modBus.addListener(StsNetworking::register);','modBus.addListener(StsNetworking::register);\n        dev.sts.compat.IronAccess.registerHooks();')
+            def destination=new File(output,relative);destination.parentFile.mkdirs();destination.setText(text,'UTF-8')
+        }
+        def binding=file('../legacy/src/common/java/dev/sts/compat/IronAccess.java').getText('UTF-8')
+                .replace('net.minecraftforge.common.MinecraftForge','net.neoforged.neoforge.common.NeoForge')
+                .replace('net.minecraftforge.eventbus.api','net.neoforged.bus.api')
+                .replace('MinecraftForge.EVENT_BUS','NeoForge.EVENT_BUS')
+                .replace('new ResourceLocation(text.indexOf', 'ResourceLocation.parse(text.indexOf')
+                .replace('new ResourceLocation(getSpellResource().getNamespace(),', 'ResourceLocation.fromNamespaceAndPath(getSpellResource().getNamespace(),')
+        def destination=new File(output,'dev/sts/compat/IronAccess.java');destination.parentFile.mkdirs();destination.setText(binding,'UTF-8')
+    }
+}
+tasks.named('compileJava') { dependsOn 'generatePortSources' }
+tasks.register('generatePortTests') {
+    inputs.dir('../../src/gameTest/java');outputs.dir(layout.buildDirectory.dir('generated/portedTests'))
+    doLast {
+        def output=layout.buildDirectory.dir('generated/portedTests').get().asFile
+        fileTree('../../src/gameTest/java').matching { include '**/SpellBridgeGameTests.java','**/BroadcastGameTests.java','**/NativeVoiceProbe.java' }.each { source ->
+            def relative=file('../../src/gameTest/java').toPath().relativize(source.toPath()).toString()
+            def text=source.getText('UTF-8')
+            def destination=new File(output,relative);destination.parentFile.mkdirs();destination.setText(text,'UTF-8')
+        }
+    }
+}
+tasks.matching { it.name=='compileGameTestJava' }.configureEach { dependsOn 'generatePortTests' }
+tasks.named('processResources') {
+    from('../../icon.png')
+    inputs.property 'version',project.version
+    filesMatching('META-INF/neoforge.mods.toml') {
+        expand version:project.version
+        filter { line -> line.replace('[21.1.200,)','[21.0.0-beta,)').replace('[1.21.1,1.21.2)','[1.21,1.21.1)').replace('[1.21-2.5.20,)','[1.21-2.5.15,)') }
+    }
+}
+tasks.named('jar') { from('../../LICENSE') { into 'META-INF' };from('../../AI_PROMPTS.md') { into 'META-INF' } }
+tasks.withType(JavaCompile).configureEach { options.encoding='UTF-8' }
+tasks.matching { it.name=='runGameTestServer' }.configureEach { doLast {
+    def log=file('run/gametest/logs/latest.log')
+    if(!log.exists()||!(log.text =~ /All \d+ required tests passed/)) throw new GradleException('NeoForge 1.21 tests did not report success')
+} }

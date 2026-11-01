@@ -1,0 +1,1037 @@
+{
+  "description": "Pinned official dependency inputs for the retained compatibility regression suite; this is not runtime version policy.",
+  "releases": [
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21-2.5.20",
+      "id": "yb1rtk9P",
+      "filename": "voicechat-neoforge-1.21-2.5.20.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/yb1rtk9P/voicechat-neoforge-1.21-2.5.20.jar",
+      "sha512": "d37a5bef0af96f6598d721515d7e0bbca71db30563b37b841bad447e80aec274e9af9edefcb8d74f65f88c263f6c3d42ee18bcde52167c03e44aa22ced4f84a7",
+      "published": "2024-08-07T18:39:55.970866Z",
+      "sha256": "268264D532AA3CE69FBEF74E94687C3AD9C5D8A1484DF2D85869129FBADF1765"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.5.20",
+      "id": "Q9wFEXgQ",
+      "filename": "voicechat-neoforge-1.21.1-2.5.20.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/Q9wFEXgQ/voicechat-neoforge-1.21.1-2.5.20.jar",
+      "sha512": "ff00454cf7b460994cb3a904b3ed8c612986fce5d65f289d9f0b823927fb811a3f4f4583942a8b69099f02bb997de97e9c1aa674802034243b3fca373ce6e282",
+      "published": "2024-08-09T07:15:35.090125Z",
+      "sha256": "247400FD7705F8C2A5872C9611A81A3A8666C4373439362CFBFD13B2503B72F9"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.5.21",
+      "id": "ggfFSro5",
+      "filename": "voicechat-neoforge-1.21.1-2.5.21.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/ggfFSro5/voicechat-neoforge-1.21.1-2.5.21.jar",
+      "sha512": "f2753fd4793bff114a3a3677a35f1f3b67fe3c6f48925d63d495e251f5c8b5be4ea80d6ec2d593cd96bbc127de35269164ac70549d80a12f159523222788f5b7",
+      "published": "2024-08-30T10:01:31.666354Z",
+      "sha256": "A63863C9510BAD47DA0E8A76E2F57F932B0EA7F5DF654EFD23175848147D8496"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.5.22",
+      "id": "RY2TYe70",
+      "filename": "voicechat-neoforge-1.21.1-2.5.22.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/RY2TYe70/voicechat-neoforge-1.21.1-2.5.22.jar",
+      "sha512": "20f740789cf0942bb7c4d982527cda0e7173e6ca4f1ffb7c1e40ffb7b3d5b2b29a5e1c4c08d0e66b90f7f8cb50f17fc84ff008d19210e651baf943a7ce148480",
+      "published": "2024-09-12T12:21:40.585075Z",
+      "sha256": "67A219960D3DE8D187F4B16EC4BD73D00EDF07E864C58566DE2E2EDD5DE78BF9"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.5.23",
+      "id": "XTCeRT0R",
+      "filename": "voicechat-neoforge-1.21.1-2.5.23.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/XTCeRT0R/voicechat-neoforge-1.21.1-2.5.23.jar",
+      "sha512": "975008e4b9dac2b5222d8d92c761aa2d86f43521730646b67801c0b806a8b17c02a8198706a458ca019eb931381d252ac99c1a4622dc6ad7b0c8dc9c9bae1819",
+      "published": "2024-10-03T08:14:08.887822Z",
+      "sha256": "4B22B8243F8BFBDD4C023CBC1C3C0E0583B9A68B300CC95D8DABE8362098DEAC"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.5.24",
+      "id": "DM5jBoKv",
+      "filename": "voicechat-neoforge-1.21.1-2.5.24.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/DM5jBoKv/voicechat-neoforge-1.21.1-2.5.24.jar",
+      "sha512": "cdd1fcbf06bc81dae38b5545dd7284bcbfad39e81c8609834f99a16b7dc36aca9dc363bb9579434c9fe3a71decfedb6d56d26d24349a249fee73a8f357729d69",
+      "published": "2024-10-08T16:20:36.25365Z",
+      "sha256": "F1D865DE73C8286A6CFBE7DB25FBA32BF161C6D6A155ADFD22A1E1AF2C90CDD4"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.5.25",
+      "id": "XRx9bF3j",
+      "filename": "voicechat-neoforge-1.21.1-2.5.25.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/XRx9bF3j/voicechat-neoforge-1.21.1-2.5.25.jar",
+      "sha512": "ca9102056fc081e3354d6f1281d2a546f8e93111a8f40a9c0140b03bdf741168cb3adbfa0f1434608c3c82a029fbb0aaf2b548285acf5d6f5f8feb08ba27f7e5",
+      "published": "2024-10-27T09:38:15.464327Z",
+      "sha256": "C381F52AA0D600E0E0E8519AE1FC78C658163DF561F6F21C182981CFC7C3A968"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.5.26",
+      "id": "L9ZSz77F",
+      "filename": "voicechat-neoforge-1.21.1-2.5.26.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/L9ZSz77F/voicechat-neoforge-1.21.1-2.5.26.jar",
+      "sha512": "ffcbb46e17d8b7abf591766706122eb8a365d4000f43cec764ca3a7b058b50cdf3f7d5602ec7b08964aef2127076c88f678e72adc2f5b3788925aa692e3a4f72",
+      "published": "2024-11-16T09:07:09.4949Z",
+      "sha256": "950A5FFA4586773AEE00BBE789CD136490D76D4FD3BEE296B29BAD0E83E0D4E8"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.5.27",
+      "id": "B3DPd7mC",
+      "filename": "voicechat-neoforge-1.21.1-2.5.27.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/B3DPd7mC/voicechat-neoforge-1.21.1-2.5.27.jar",
+      "sha512": "36b6c0a7854e32b53b6a51fc763ebb79969eef04558c38089616241e858191124d307894c412294a55d61947a49ea22255d7a5a13c3d64280c2537a38cff9609",
+      "published": "2024-12-17T11:19:42.917472Z",
+      "sha256": "EE9D9B20976D7CDE30CB9F3E125239B2F672C255AFAAE0F63EA09897C1094D00"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.5.28",
+      "id": "YTRNLDqy",
+      "filename": "voicechat-neoforge-1.21.1-2.5.28.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/YTRNLDqy/voicechat-neoforge-1.21.1-2.5.28.jar",
+      "sha512": "d5bd8603e2d93fa7c404a9c2dc2d7f7315d48541646196b9e6aa4145d1229d726a204012291aafdd489f473c941e0c352d549a48f2a3b66513f4d6093d6b585c",
+      "published": "2025-02-26T15:14:11.384039Z",
+      "sha256": "A9000689765A23DDD3F22C693969C65030B874F3F2ACCCE6FA24BF52B4BD67B6"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.5.29",
+      "id": "XIkkFeGA",
+      "filename": "voicechat-neoforge-1.21.1-2.5.29.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/XIkkFeGA/voicechat-neoforge-1.21.1-2.5.29.jar",
+      "sha512": "74cbd99c0263afeb8ec65f01d6ebd5f9bbdbbe6909da33e2930ea7b0cb9f5f006f62cbf10303244fc900347663d992fba8b67c7d93d4498e7467b03722f91e34",
+      "published": "2025-04-01T14:55:27.818066Z",
+      "sha256": "7A83F50589217815979D79DFCA00F7477C768C520406D56172006BE45E1C8784"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.5.30",
+      "id": "meUMv02j",
+      "filename": "voicechat-neoforge-1.21.1-2.5.30.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/meUMv02j/voicechat-neoforge-1.21.1-2.5.30.jar",
+      "sha512": "67a0084e0637d3ae383c931711369cd0fe66e6ebfb1a4ffe5ba212c5084a83d04bb905eb7bcded3f5726841219280253d3d62f0df659d0924153e24dfae10274",
+      "published": "2025-04-19T09:51:48.621147Z",
+      "sha256": "9784733F5E23D54DBBD7F86E1AF036DBCC420D16434E3F7BF34B6C9644AF6F06"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.5.31",
+      "id": "f36XCX1D",
+      "filename": "voicechat-neoforge-1.21.1-2.5.31.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/f36XCX1D/voicechat-neoforge-1.21.1-2.5.31.jar",
+      "sha512": "c8614b67261bd1bd76df712b15e73821e3dd11add2d59ef4eee948d181c308daebc9be7d7eaaed8277dad5ac5888b2e99abdd51bf777008b65058dc56fa4a884",
+      "published": "2025-06-23T14:53:44.12689Z",
+      "sha256": "5E443BEB6DFCFDBFB1082A24C0F642A89271FBC27C9C2053EB32F8A18AD05095"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.5.32",
+      "id": "vtZGJcqz",
+      "filename": "voicechat-neoforge-1.21.1-2.5.32.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/vtZGJcqz/voicechat-neoforge-1.21.1-2.5.32.jar",
+      "sha512": "8b041a59bce009afc787067d60a8f601ee35851ffdd1e42eef3cc00369bb041f21519fa5576fb7385bdf3dd2bbb97fe9e30b6f704490c63f659f3a0d6767d59d",
+      "published": "2025-06-26T08:30:41.282866Z",
+      "sha256": "69487E43EA4FE2074D5B4C396B53E687DA7DEB98951C280EEF0C2B718A43F276"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.5.33",
+      "id": "QzjQgeKC",
+      "filename": "voicechat-neoforge-1.21.1-2.5.33.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/QzjQgeKC/voicechat-neoforge-1.21.1-2.5.33.jar",
+      "sha512": "44bbe0598a33f9fa9fd3e877d698fb815d992c429ec3c9518ad1ec5b73e049e3c17ed16d714155084b10aa5d819ed753402b020f3a37ab5a0398f18e45d42c84",
+      "published": "2025-07-02T07:02:12.583792Z",
+      "sha256": "1EBFFF4EEC10CC175D492BA8E699AD4D85C66E9E0E72DBAAB30F3F80661879A6"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.5.34",
+      "id": "QXvxq76M",
+      "filename": "voicechat-neoforge-1.21.1-2.5.34.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/QXvxq76M/voicechat-neoforge-1.21.1-2.5.34.jar",
+      "sha512": "3139491b7bc473f9b7194a7fa3f55260cb525c41597bcf3d9e1a4c879828dea55c6eca1c8af0fa56d95563319e32e0288957f64982c27fea63a856918105fee9",
+      "published": "2025-07-11T12:45:42.775858Z",
+      "sha256": "CA3E4F599514E8C501EECE10CFAFD6BF234A57796B591AABF5E230264FB87C31"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.5.35",
+      "id": "aHJDzfX2",
+      "filename": "voicechat-neoforge-1.21.1-2.5.35.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/aHJDzfX2/voicechat-neoforge-1.21.1-2.5.35.jar",
+      "sha512": "99dc0350aeeabe01f25511ee5bca38e5cf526210d6c6007a6094f2f2b7d1ecc6ffc79a1e89be194a33c718e7c9d95b231066097952f4bf31fd70d47138c98589",
+      "published": "2025-07-19T11:15:27.104774Z",
+      "sha256": "555B38D57FBD66F4E323B7794C97B01C13B4322C03B7CF0BAB99924721444FAB"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.5.36",
+      "id": "uf5KEVOO",
+      "filename": "voicechat-neoforge-1.21.1-2.5.36.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/uf5KEVOO/voicechat-neoforge-1.21.1-2.5.36.jar",
+      "sha512": "0866790ee2d158eb59b33fe02250800958eedcfdf30ae4a4dfbbe618c545e10a25efbcdd3bf8ece9ba5a98bc915b08ce5612d403a36ef67ab11c4298a43f118d",
+      "published": "2025-08-08T15:30:41.058904Z",
+      "sha256": "417DA1F767D88FAA29C0C8FB85B05D28767B7BD8BA6DBF3E48EC2906053CA9F0"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.6.0",
+      "id": "AQiWoL9h",
+      "filename": "voicechat-neoforge-1.21.1-2.6.0.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/AQiWoL9h/voicechat-neoforge-1.21.1-2.6.0.jar",
+      "sha512": "dcdb9f2f20aacc4c5c11a827959dcbc834457182cdfc744cdfae94398b2a9fbab798930a650c930ee287dbb2a5828a0465f0ca12495e0f4b92d2653e3411ea77",
+      "published": "2025-09-01T10:59:10.063403Z",
+      "sha256": "5A162EAEB95658D7A5A8FD32180620E28377710490B5B5AF264CC6DB2B8287EC"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.6.1",
+      "id": "zcRU0iPX",
+      "filename": "voicechat-neoforge-1.21.1-2.6.1.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/zcRU0iPX/voicechat-neoforge-1.21.1-2.6.1.jar",
+      "sha512": "3f849bdaefbfc611374c5f89f843f0015633011faed45fdb8674759f4c8d8c781e14aed2846ef4c83370343f6850697082d4910e7050190142073e1c190483b6",
+      "published": "2025-09-01T15:25:47.657815Z",
+      "sha256": "46DA4EB4EE5202D7A91732321E32DC1FAAE0D21926B43DB5567E4BC69C6B10FF"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.6.2",
+      "id": "o3Y9NVDA",
+      "filename": "voicechat-neoforge-1.21.1-2.6.2.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/o3Y9NVDA/voicechat-neoforge-1.21.1-2.6.2.jar",
+      "sha512": "f34e44748c44c8a25021e68ec70f840fe841a769d4301f6c7294f8d054cc0567b722e6fbd99e7c4beecd8cf9c0cf13c5d58bad5a6a1a42253332b9ed9e1c0869",
+      "published": "2025-09-04T14:25:01.848157Z",
+      "sha256": "FA3B89047AF91BC3AB2B6B2ADCFA9D45499C20AFF93B03F5EEF2B8F01FEA16D7"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.6.3",
+      "id": "dpS4V7MI",
+      "filename": "voicechat-neoforge-1.21.1-2.6.3.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/dpS4V7MI/voicechat-neoforge-1.21.1-2.6.3.jar",
+      "sha512": "98c94a7c6d3674ca1d31f1f5e92e447d2c7880629f9a8c7c10dad146a8ae3f2e080e81fef7f4e5c2ee011e0f28d2bea034a61e16a4bd4c2a0cab0bace5152262",
+      "published": "2025-09-09T14:24:05.165489Z",
+      "sha256": "A44C048012F5480F94183C1122ED0D81DEF18C68708F79E8C3DC2EFA30A1CB78"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.6.4",
+      "id": "GAjKFWUF",
+      "filename": "voicechat-neoforge-1.21.1-2.6.4.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/GAjKFWUF/voicechat-neoforge-1.21.1-2.6.4.jar",
+      "sha512": "202e342f615abff9a615d73bb960b6248214a8935bba92b16c0d9d223f7203a3cb2cb1d8af1b99093dd299be7d41f1c7e5ad14366fefb3f2be3784c5cb804fe1",
+      "published": "2025-09-19T10:44:28.785406Z",
+      "sha256": "B4B14E7A8CF6B7D06FC26BAC7A2A29C4CCB7D7179B5639967D0ED54F8D9C1CA6"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.6.5",
+      "id": "X0DpctdR",
+      "filename": "voicechat-neoforge-1.21.1-2.6.5.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/X0DpctdR/voicechat-neoforge-1.21.1-2.6.5.jar",
+      "sha512": "9b388d37f87164395706819b38258050538c670a29d72430533706be11b43511ed9fdca7d1637e3a8603987f796afe83ee93f3c9b728d64a2c7c11ec0ec93140",
+      "published": "2025-10-08T10:52:57.659599Z",
+      "sha256": "3FD480E93DDE0366CE64C34BE93A2BA2A1A5C6652C36E4A89D4AC2BDF379B757"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.6.6",
+      "id": "xPCSVWfI",
+      "filename": "voicechat-neoforge-1.21.1-2.6.6.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/xPCSVWfI/voicechat-neoforge-1.21.1-2.6.6.jar",
+      "sha512": "ce2b4464034c3cb85df73bebd6bfcdc9c4cfa4a26bbb90ac327e3d08a2880207c46ffa7ecf5e6f0b6f41a63338e70085f1c0f0ea582cf615ccb7c4e60d98cc20",
+      "published": "2025-10-17T13:34:12.176181Z",
+      "sha256": "D6B030F5E217D904AACA29C6E6F1A6B7365BE6931DB0BD7632E6385805B498B1"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.6.7",
+      "id": "mBIGDJAR",
+      "filename": "voicechat-neoforge-1.21.1-2.6.7.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/mBIGDJAR/voicechat-neoforge-1.21.1-2.6.7.jar",
+      "sha512": "92ecb2245999ad1047826fe4de634674e3a95f33544c4b4b675024472556d59b5dab27043742cd6597d0ce28c5351c1cdb19032f0240a45baa42cd9208d98b92",
+      "published": "2025-12-11T09:36:17.270947Z",
+      "sha256": "9F273ED66C78752E294FD58A24A042A581C24B7851FF9106EADFB98EB32D1A45"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.6.8",
+      "id": "TJXfhyx3",
+      "filename": "voicechat-neoforge-1.21.1-2.6.8.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/TJXfhyx3/voicechat-neoforge-1.21.1-2.6.8.jar",
+      "sha512": "dac87a4019eb4a11cddbe7002109d4016cf5adb3756b153d6828bf6a938e30dcfbda683d2534afe713da2393bb855d1b8c028a80534efa0a3d3eb5dc9d34deaa",
+      "published": "2025-12-16T18:21:30.079791Z",
+      "sha256": "A753D309A96D393CF94648B0F962F29A2DD5763318337AF994D24AB1039D2EEE"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.6.9",
+      "id": "gG2bQbgU",
+      "filename": "voicechat-neoforge-1.21.1-2.6.9.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/gG2bQbgU/voicechat-neoforge-1.21.1-2.6.9.jar",
+      "sha512": "aafc81293652915b9f8110f7fd9c8e20f326d105483d693c6ae9340332d7ffc45a7fb2205e8616354853ede0cbeaa39156501c8d760d7ccc20c0b1bf0d786ea1",
+      "published": "2025-12-17T11:50:45.398535Z",
+      "sha256": "DFB4D221865C6F79C16D146C82A05B1E5D888920050C16683DF07E0A3ED7C2BC"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.6.10",
+      "id": "uzux0UJ2",
+      "filename": "voicechat-neoforge-1.21.1-2.6.10.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/uzux0UJ2/voicechat-neoforge-1.21.1-2.6.10.jar",
+      "sha512": "a25161aed7dddd6be66e231f58f137bb0dd97f319a9a786db75a56ad1b391fe69bb934e6074f5d4d4702ab3c17f468a610c8341bff19cc2c3b183b9cbe68910b",
+      "published": "2025-12-21T12:17:25.653959Z",
+      "sha256": "D1A6A5653BB367013A4D9667803B9C35B8A68DF6CD63AB1667A8C89A472B9165"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.6.11",
+      "id": "FgFHypOW",
+      "filename": "voicechat-neoforge-1.21.1-2.6.11.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/FgFHypOW/voicechat-neoforge-1.21.1-2.6.11.jar",
+      "sha512": "f1cb3f1ced2f0ec956d59a6f80cf1bee6c3c93a77d9fc05bb441c4ffeca807cae9466c8a8084ed7520259eb684d66a5d1a2e98d806087ad0cab80fd740db86cc",
+      "published": "2026-01-04T15:18:33.192706Z",
+      "sha256": "9C3246D7496FAC7D3CDA7C5693848D8BB7582AA78099652B5FD56778B3D1BDB7"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.6.12",
+      "id": "WxJDv3oM",
+      "filename": "voicechat-neoforge-1.21.1-2.6.12.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/WxJDv3oM/voicechat-neoforge-1.21.1-2.6.12.jar",
+      "sha512": "e7ce05aa487ed1487f34e8300bba77e4c091d928912adc664f72a10862b222d84ee0f8193441392087d7ac907f6b5afad1faeee8e6089bc0081e435197043736",
+      "published": "2026-02-12T12:34:17.93012Z",
+      "sha256": "09E81386AEF27375E84443AB14425B2E0833B400CE7860282C4362DC5568569B"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.6.13",
+      "id": "JinX6hY2",
+      "filename": "voicechat-neoforge-1.21.1-2.6.13.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/JinX6hY2/voicechat-neoforge-1.21.1-2.6.13.jar",
+      "sha512": "57d542c68a545a4bfe42cda7b55ba26e8da0f7a39aa9d6ffbe5735b95e308d3599ea5b30304d51b88f5755b9bcf22226555975fd407d6b5de8848a58c30cf9f3",
+      "published": "2026-03-27T16:23:03.016354Z",
+      "sha256": "21AD281F6C7BEDEE1E166DDBE45CB0F69AD220962E8D13668EBB72143A9E757C"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.6.14",
+      "id": "BhWeUeeg",
+      "filename": "voicechat-neoforge-1.21.1-2.6.14.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/BhWeUeeg/voicechat-neoforge-1.21.1-2.6.14.jar",
+      "sha512": "bfcb1984d0a57e871b8efce67ae42a65a875a7745ace315d2cb6ae1b1df16603a3ca6dd3058f6973992afe0a6f301bb79db4e6e852be2fc25bbbdccb9841c0af",
+      "published": "2026-03-28T09:12:16.526727Z",
+      "sha256": "0E85039578FABBC611BAF6FACBD42A88B60731281A7E4F7A12A603275B6921FC"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.6.15",
+      "id": "zJuMA3Ya",
+      "filename": "voicechat-neoforge-1.21.1-2.6.15.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/zJuMA3Ya/voicechat-neoforge-1.21.1-2.6.15.jar",
+      "sha512": "44a9c2f817dffe44f795af5bcf8cfc22df15eef286573fe57cec859fca9fc6d712ac2144f22ccbe8f8fe62e6fa140dd85d6bfed7093af3f07c5a3795d003f4d7",
+      "published": "2026-04-04T11:33:24.803147Z",
+      "sha256": "E5DEE517378A3ADDD98F4DC28DCCE22AF54EDE2E6EB323A3AF7F9FC49953DE64"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.6.16",
+      "id": "rGX4hrtP",
+      "filename": "voicechat-neoforge-1.21.1-2.6.16.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/rGX4hrtP/voicechat-neoforge-1.21.1-2.6.16.jar",
+      "sha512": "87d4862b6d5e91712adb389acdb5a139b20e9315a62b54c60f1cd76855c86ee75e56e61ebc484b44d57179caa0e9f26c28a2284c8a0e3bf403dbd44f79a00ed1",
+      "published": "2026-04-10T14:26:34.267049Z",
+      "sha256": "1D3CC0668F3AAAD383E2F0940C14C8C7D278FF6F71332AFBAC6D368A2438BEDC"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.6.17",
+      "id": "6rT2RWh6",
+      "filename": "voicechat-neoforge-1.21.1-2.6.17.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/6rT2RWh6/voicechat-neoforge-1.21.1-2.6.17.jar",
+      "sha512": "9646faa446300ee4d34936fdb71614d1e23bc2b3ca8da39a7dc46dc420caa01139db7f9db830154e27ea6662a1a50a68665e09407ba73da45841c3678f1659db",
+      "published": "2026-05-04T12:48:07.003825Z",
+      "sha256": "0981CDB58E540722D68BA444DC4396E2467A8F0B2F346DE55C68282C5671D70A"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.6.18",
+      "id": "eFhbQnrh",
+      "filename": "voicechat-neoforge-1.21.1-2.6.18.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/eFhbQnrh/voicechat-neoforge-1.21.1-2.6.18.jar",
+      "sha512": "9990a758a9c1044af1dce3b96feaf7eeab91a8180fbf9e77388c1ee9983c2c0919710d87b917eb815457d926f00e68557c6a85eb8193d895ac8fe78fd7abb4c1",
+      "published": "2026-05-28T08:10:42.184324Z",
+      "sha256": "FB0DC1F4BB36F471FAFC86FEE12B963F036DDF8D4622653509D884BBED96B1E5"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.6.19",
+      "id": "pVcxgOYC",
+      "filename": "voicechat-neoforge-1.21.1-2.6.19.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/pVcxgOYC/voicechat-neoforge-1.21.1-2.6.19.jar",
+      "sha512": "0572035e1a706c524a885feb83e8245baa619bc1e182f8bb8917d4ff5d3398461261bf03ff3973859d343afb9eaa8f90ee286eeb884e0e794db1a7dc0433a5e6",
+      "published": "2026-06-19T15:39:21.023404Z",
+      "sha256": "F9353BB9A9F9A0C0DAACDCF3261F301B900D944781F9CB057FAF9DF4CA21182F"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.6.20",
+      "id": "8xOu3Um5",
+      "filename": "voicechat-neoforge-1.21.1-2.6.20.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/8xOu3Um5/voicechat-neoforge-1.21.1-2.6.20.jar",
+      "sha512": "934b2b5f474fa2b43ee052cbc7802a2d282a11c1f76ceb1ec434293e05614cf971f64e397c3cf03445d793617bf9e0c315cb434b5adeb110aa40eb0192e8c745",
+      "published": "2026-06-21T12:38:24.240939Z",
+      "sha256": "1E387494CEC156553557D0996CEE6DBF6CA606E371782F723FF08D3E9905FE3C"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.6.21",
+      "id": "dbzBkplC",
+      "filename": "voicechat-neoforge-1.21.1-2.6.21.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/dbzBkplC/voicechat-neoforge-1.21.1-2.6.21.jar",
+      "sha512": "85b39efaab7f9b8aabd78d8a5eb80bd6964c4a3f737f6e1327d7864726e4ad1319ce51f121fb6fe2be5b3b761c51af2591b66348c4404610dc03fc458a8ea007",
+      "published": "2026-07-19T11:03:00.720503Z",
+      "sha256": "901C4917960CE975CECC9A39C15D32C22BEABC23ED3C36F0CE75DF5A6CDD9366"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.6.22",
+      "id": "2s7zUspF",
+      "filename": "voicechat-neoforge-1.21.1-2.6.22.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/2s7zUspF/voicechat-neoforge-1.21.1-2.6.22.jar",
+      "sha512": "309e3b18e299b2bccf9128dbb05c2603a9860f7cd68858d23f8fdb8265ea85ec7fb1655c95b87c0a9522ae1fd6380b26e4a4c31207f9c7af80870fcc6207abad",
+      "published": "2026-08-08T11:51:32.715274Z",
+      "sha256": "63116A4D21BD57221482D971DD85822F7C723C210B60411670CDB0AA26873CAC"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.6.23",
+      "id": "Dv1fH2I2",
+      "filename": "voicechat-neoforge-1.21.1-2.6.23.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/Dv1fH2I2/voicechat-neoforge-1.21.1-2.6.23.jar",
+      "sha512": "8d3dfb8b34658dfa9786a7a8db3b80e4a49ef602905ec35e449d197e327e5baee114f8a6724cfbfee08df44654761d08610f2552a156a222135fb98422da0486",
+      "published": "2026-09-04T15:49:36.335508Z",
+      "sha256": "3A70DC640992EFABAE224708BCE2521E6029607DDB7ABCFDEE499D5EA3D1D81C"
+    },
+    {
+      "project": "9eGKb6K1",
+      "version": "neoforge-1.21.1-2.6.24",
+      "id": "qqNx1Yjm",
+      "filename": "voicechat-neoforge-1.21.1-2.6.24.jar",
+      "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/qqNx1Yjm/voicechat-neoforge-1.21.1-2.6.24.jar",
+      "sha512": "730d2b2acc39afbac16cd3e4312d411e6f226f71aa58e26ff9c772110f962b2e2c7810baa3cd19cd82d28aed85c58d0c0df1ed5fc97dad8a89655008f3461a31",
+      "published": "2026-09-20T07:23:47.412337Z",
+      "sha256": "7AF3BBC34948CC0F833946FD4B0D2DB7ED608F67A12702BE4DF6F731A4B66290"
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21-3.4.0",
+      "id": "cf5610328",
+      "filename": "irons_spellbooks-1.21-3.4.0-all.jar",
+      "url": "https://mediafilez.forgecdn.net/files/5610/328/irons_spellbooks-1.21-3.4.0-all.jar",
+      "published": "2024-08-09T05:19:36.097Z",
+      "sha256": "974F9A66176B30C70C38975481D827FC743AF1E4004E8F143D101493DE7F1143",
+      "provider": "CurseForge",
+      "publisherFileBytes": 8824546
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21-3.4.1",
+      "id": "cf5613025",
+      "filename": "irons_spellbooks-1.21-3.4.1-all.jar",
+      "url": "https://mediafilez.forgecdn.net/files/5613/25/irons_spellbooks-1.21-3.4.1-all.jar",
+      "published": "2024-08-10T01:59:23.97Z",
+      "sha256": "6A960A53A7AEB7EC37286D8362663174DDF95E74E00C86BAB86426E162EC953A",
+      "provider": "CurseForge",
+      "publisherFileBytes": 8827475
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21-3.4.2",
+      "id": "cf5615937",
+      "filename": "irons_spellbooks-1.21-3.4.2-all.jar",
+      "url": "https://mediafilez.forgecdn.net/files/5615/937/irons_spellbooks-1.21-3.4.2-all.jar",
+      "published": "2024-08-10T19:02:10.053Z",
+      "sha256": "055BC3BE31EBAF6E1B1970AAA07A3328C28A06E323E71B57A60D2D8EEE4B5D58",
+      "provider": "CurseForge",
+      "publisherFileBytes": 8827274
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21-3.4.3",
+      "id": "cf5616462",
+      "filename": "irons_spellbooks-1.21-3.4.3-all.jar",
+      "url": "https://mediafilez.forgecdn.net/files/5616/462/irons_spellbooks-1.21-3.4.3-all.jar",
+      "published": "2024-08-10T22:37:32.807Z",
+      "sha256": "0931EAB3CBCFB154CF20E7F68E8C47FAED0620B4880E2A47E9D1DBE0F0607EFE",
+      "provider": "CurseForge",
+      "publisherFileBytes": 8827418
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21-3.4.4",
+      "id": "qoBnKL48",
+      "filename": "irons_spellbooks-1.21-3.4.4-all.jar",
+      "url": "https://cdn.modrinth.com/data/s4OWxYQQ/versions/qoBnKL48/irons_spellbooks-1.21-3.4.4-all.jar",
+      "sha512": "479761d5e0776559f007c5a61da440aaf77e8a0fd810c011b61f46f2ecf25a902c45c5b1385fbc3ee62fe44aa73a451a006e410452b97b22a61ca4073ee4ccb5",
+      "published": "2024-08-17T02:11:29.401868Z",
+      "sha256": "B55662B0303A6211BCDBF907D0E18E63242D1EF9A187D569A09B598A3B1AB45B"
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21-3.4.5",
+      "id": "cf5659880",
+      "filename": "irons_spellbooks-1.21-3.4.5-all.jar",
+      "url": "https://mediafilez.forgecdn.net/files/5659/880/irons_spellbooks-1.21-3.4.5-all.jar",
+      "published": "2024-08-24T19:49:59.6Z",
+      "sha256": "37EDAEC319045821C90058A3E408E1CEB9B3F0E8046BD3360AA849929B18F02A",
+      "provider": "CurseForge",
+      "publisherFileBytes": 8835344
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21-3.5.0",
+      "id": "XT2DT00u",
+      "filename": "irons_spellbooks-1.21-3.5.0-all.jar",
+      "url": "https://cdn.modrinth.com/data/s4OWxYQQ/versions/XT2DT00u/irons_spellbooks-1.21-3.5.0-all.jar",
+      "sha512": "dd6731acee18c405abe435a167c443749f32e8d4fbea0ef0088f9ad5b3672864f3ae53dc55478d2114a7b49b5d419ee568f07aeb500d00e43c005067abe9bd19",
+      "published": "2024-09-07T01:05:00.061971Z",
+      "sha256": "49297F8FC60AAF2234182D9E296F6881AF15FB0C3FB9F416D4DAD3036E8BC0F7"
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21-3.6.0",
+      "id": "cf5726285",
+      "filename": "irons_spellbooks-1.21-3.6.0.jar",
+      "url": "https://mediafilez.forgecdn.net/files/5726/285/irons_spellbooks-1.21-3.6.0.jar",
+      "published": "2024-09-15T18:03:16.87Z",
+      "sha256": "17A978D59D3035640BD114F30ADF309189813A039CD3988C7DC6C6B5F6F568DA",
+      "provider": "CurseForge",
+      "publisherFileBytes": 9407527
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21-3.6.1",
+      "id": "cf5726459",
+      "filename": "irons_spellbooks-1.21-3.6.1.jar",
+      "url": "https://mediafilez.forgecdn.net/files/5726/459/irons_spellbooks-1.21-3.6.1.jar",
+      "published": "2024-09-15T18:52:55.783Z",
+      "sha256": "3ACFD2BEC95B45E6A686D9BA89EEC7E60721C8D27B5637DB3FD0F1ED89A1A7D6",
+      "provider": "CurseForge",
+      "publisherFileBytes": 9407503
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21-3.6.2",
+      "id": "cf5731808",
+      "filename": "irons_spellbooks-1.21-3.6.2.jar",
+      "url": "https://mediafilez.forgecdn.net/files/5731/808/irons_spellbooks-1.21-3.6.2.jar",
+      "published": "2024-09-17T15:56:41.303Z",
+      "sha256": "FCF53A7CC4E34EAF3E282D7103A38D1E8106539303ABA8D0FA39FCEB60A18AF2",
+      "provider": "CurseForge",
+      "publisherFileBytes": 9434992
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21-3.7.0",
+      "id": "cf5765125",
+      "filename": "irons_spellbooks-1.21-3.7.0.jar",
+      "url": "https://mediafilez.forgecdn.net/files/5765/125/irons_spellbooks-1.21-3.7.0.jar",
+      "published": "2024-09-28T16:10:49.097Z",
+      "sha256": "A9F81342885B815BC1F29E76DD7B3730853410EA6A41BFE782DB902655906176",
+      "provider": "CurseForge",
+      "publisherFileBytes": 9442156
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21-3.7.1",
+      "id": "cf5769235",
+      "filename": "irons_spellbooks-1.21-3.7.1.jar",
+      "url": "https://mediafilez.forgecdn.net/files/5769/235/irons_spellbooks-1.21-3.7.1.jar",
+      "published": "2024-09-29T23:15:23.487Z",
+      "sha256": "C2769E3E17663CFE8B88FF9B64E79FF7B05CA6511EC9FFD45D375737B5573968",
+      "provider": "CurseForge",
+      "publisherFileBytes": 9442184
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21-3.8.0",
+      "id": "i4wOaL4l",
+      "filename": "irons_spellbooks-1.21-3.8.0.jar",
+      "url": "https://cdn.modrinth.com/data/s4OWxYQQ/versions/i4wOaL4l/irons_spellbooks-1.21-3.8.0.jar",
+      "sha512": "6e4b1ce50446daf7d2ca7b278dcb8532da8ed5ba14d01ffda28c7ba13733910486a7cba76ff0cd4cdd3ed2d2fab88edb98b9acf25161f2768bac95dba8467c3c",
+      "published": "2024-10-22T00:17:46.496194Z",
+      "sha256": "05DF7927FD56F115139C37FF25E5CA9FFADB673E6F2B795812E62BF1199C1E03"
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21-3.8.2",
+      "id": "cf5834785",
+      "filename": "irons_spellbooks-1.21-3.8.2.jar",
+      "url": "https://mediafilez.forgecdn.net/files/5834/785/irons_spellbooks-1.21-3.8.2.jar",
+      "published": "2024-10-22T18:58:56.35Z",
+      "sha256": "E5F56E8F61CF49D247818993202450619E173C7D4148D4580AA61CBC749E6FF2",
+      "provider": "CurseForge",
+      "publisherFileBytes": 9466824
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21-3.8.3",
+      "id": "aWaheue9",
+      "filename": "irons_spellbooks-1.21-3.8.3.jar",
+      "url": "https://cdn.modrinth.com/data/s4OWxYQQ/versions/aWaheue9/irons_spellbooks-1.21-3.8.3.jar",
+      "sha512": "7df915278125247d95bb579e0c180a1e95fe975214c0ff9cf7278812c9e688bf47d3597276d51fbd9276c3ca57151e16772d3992f862c084b759149f4eb61c60",
+      "published": "2024-10-30T20:04:22.72662Z",
+      "sha256": "050210338247308A31DBF48C39ADFC37F41803547953E4BD6F5C228718EB9F88"
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21-3.8.4",
+      "id": "uUoaTkvx",
+      "filename": "irons_spellbooks-1.21-3.8.4.jar",
+      "url": "https://cdn.modrinth.com/data/s4OWxYQQ/versions/uUoaTkvx/irons_spellbooks-1.21-3.8.4.jar",
+      "sha512": "82f67de5eb14ce0620ad32b21723ca70352f86e9453702dbcb4e2eb02647fb436109ddb1a9a1b80b92b16776162ece139099c9343f17619eacdef1a508add57d",
+      "published": "2024-10-31T19:02:57.834101Z",
+      "sha256": "022C97395CEE4EE2ED22FFF6F8EC357443CC9AEEF6CC504771A6994CC1E28F0F"
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21-3.8.5",
+      "id": "cf5934943",
+      "filename": "irons_spellbooks-1.21-3.8.5.jar",
+      "url": "https://mediafilez.forgecdn.net/files/5934/943/irons_spellbooks-1.21-3.8.5.jar",
+      "published": "2024-11-24T22:54:31.023Z",
+      "sha256": "A268405DE32B7A5F368DDD5D3662CE73E1C1F50A7DE98F626785325971B74EBF",
+      "provider": "CurseForge",
+      "publisherFileBytes": 9464006
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21-3.8.6",
+      "id": "cf5983204",
+      "filename": "irons_spellbooks-1.21-3.8.6.jar",
+      "url": "https://mediafilez.forgecdn.net/files/5983/204/irons_spellbooks-1.21-3.8.6.jar",
+      "published": "2024-12-11T19:00:20.537Z",
+      "sha256": "3574F8BFCB82C49E40D69EA7408F244BF9FA1F498546644BD984F3C6E51F4903",
+      "provider": "CurseForge",
+      "publisherFileBytes": 9481691
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21-3.8.7",
+      "id": "cf6027855",
+      "filename": "irons_spellbooks-1.21-3.8.7.jar",
+      "url": "https://mediafilez.forgecdn.net/files/6027/855/irons_spellbooks-1.21-3.8.7.jar",
+      "published": "2024-12-27T17:58:57.47Z",
+      "sha256": "E0D7C45933EF3F5F6DA2CE90D32158FCE6796B5A190FA3055EC5383647757C87",
+      "provider": "CurseForge",
+      "publisherFileBytes": 9467050
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21-3.8.8",
+      "id": "SIe0lwUd",
+      "filename": "irons_spellbooks-1.21-3.8.8.jar",
+      "url": "https://cdn.modrinth.com/data/s4OWxYQQ/versions/SIe0lwUd/irons_spellbooks-1.21-3.8.8.jar",
+      "sha512": "7e6aa1d880a44d204dc47e59555ff2a14944ade5c6117c3f2ec4522fbe8b5c1fb3a98affdcf4e5e4eda8dd51bd1ff01ab15e2039252a89719dec759f14141e5d",
+      "published": "2025-01-18T23:20:37.113758Z",
+      "sha256": "3A0456BE8A9FA6681BE1F879799B247F6726A863DDB404FE29B902F70D1B0937"
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21-3.8.9",
+      "id": "cf6117735",
+      "filename": "irons_spellbooks-1.21-3.8.9.jar",
+      "url": "https://mediafilez.forgecdn.net/files/6117/735/irons_spellbooks-1.21-3.8.9.jar",
+      "published": "2025-01-23T21:02:30.58Z",
+      "sha256": "67F673A7A3D9FE19350C0477C023E5843416655DC8CA78A8873DD5EF5CB3BEB4",
+      "provider": "CurseForge",
+      "publisherFileBytes": 9562806
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21-3.8.10",
+      "id": "cf6197625",
+      "filename": "irons_spellbooks-1.21-3.8.10.jar",
+      "url": "https://mediafilez.forgecdn.net/files/6197/625/irons_spellbooks-1.21-3.8.10.jar",
+      "published": "2025-02-15T23:13:19.353Z",
+      "sha256": "F9FE69219307C8D899B9504394B4306C2DF3548C2D697469AF1FC655911CFA86",
+      "provider": "CurseForge",
+      "publisherFileBytes": 9563531
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21-3.9.0",
+      "id": "9IkMSFyF",
+      "filename": "irons_spellbooks-1.21-3.9.0.jar",
+      "url": "https://cdn.modrinth.com/data/s4OWxYQQ/versions/9IkMSFyF/irons_spellbooks-1.21-3.9.0.jar",
+      "sha512": "9385cec142037dd492db9bcc54bd502eb4c4d6c321f0c8d3d1244bbb22ac8d9860cea754f1584dae8fdb3feff3cd12039b88caed4a6e35f82829ed7a2bf3f340",
+      "published": "2025-03-08T21:38:22.42829Z",
+      "sha256": "EDFCB55AF3FB20ACC577826FFFDF784669EA2328C0F28878E04C8789AF6BF761"
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21.1-3.9.1",
+      "id": "cf6282642",
+      "filename": "irons_spellbooks-1.21.1-3.9.1.jar",
+      "url": "https://mediafilez.forgecdn.net/files/6282/642/irons_spellbooks-1.21.1-3.9.1.jar",
+      "published": "2025-03-09T04:45:29.6Z",
+      "sha256": "73F52DDDD55CA81AC10F2CC2BF588943B469C25C93DCCC974C5F2B40BAFB80E4",
+      "provider": "CurseForge",
+      "publisherFileBytes": 9578001
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21.1-3.10.0",
+      "id": "cf6308743",
+      "filename": "irons_spellbooks-1.21.1-3.10.0.jar",
+      "url": "https://mediafilez.forgecdn.net/files/6308/743/irons_spellbooks-1.21.1-3.10.0.jar",
+      "published": "2025-03-15T20:35:37.553Z",
+      "sha256": "58FD1C019B883C31FE46C373789A0D3643B2EAF03967EEAF15C7A7A205C4DCA9",
+      "provider": "CurseForge",
+      "publisherFileBytes": 11740619
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21.1-3.10.1",
+      "id": "CyKAZm7z",
+      "filename": "irons_spellbooks-1.21.1-3.10.1.jar",
+      "url": "https://cdn.modrinth.com/data/s4OWxYQQ/versions/CyKAZm7z/irons_spellbooks-1.21.1-3.10.1.jar",
+      "sha512": "09a2abfa52c80269a523ca531b833389edda77b840c335489c0c7e0fb6a815f41ae4d99bd6a8fbee2de8eb0546b34e0c15719d59d6ffa96823ec84cca91073bc",
+      "published": "2025-03-18T14:09:26.654889Z",
+      "sha256": "2943D48A4E62EFD2E1D294FB95483304544DBD66BB5B39078B4483460695AF12"
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21.1-3.10.2",
+      "id": "cf6333294",
+      "filename": "irons_spellbooks-1.21.1-3.10.2.jar",
+      "url": "https://mediafilez.forgecdn.net/files/6333/294/irons_spellbooks-1.21.1-3.10.2.jar",
+      "published": "2025-03-22T22:29:27.163Z",
+      "sha256": "108D1126024DC94861A5E717418BB0D62786837DE52A7EE99FDFBE1FDB417A17",
+      "provider": "CurseForge",
+      "publisherFileBytes": 11751444
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21.1-3.11.0",
+      "id": "K4HCDykO",
+      "filename": "irons_spellbooks-1.21.1-3.11.0.jar",
+      "url": "https://cdn.modrinth.com/data/s4OWxYQQ/versions/K4HCDykO/irons_spellbooks-1.21.1-3.11.0.jar",
+      "sha512": "045831d68877c0960273dd36b096984524702c6ad7f8438ec61650869edc6f19977fbafda7ad4bb9ca8741e3be2d15307df7fc5926e3a94987a1d3574bde15f2",
+      "published": "2025-04-15T00:15:12.772642Z",
+      "sha256": "66EC719280797CD54328B9EC1712837D84D70E5AC53EC9E4C060F2B46880F870"
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21.1-3.12.0",
+      "id": "cf6497109",
+      "filename": "irons_spellbooks-1.21.1-3.12.0.jar",
+      "url": "https://mediafilez.forgecdn.net/files/6497/109/irons_spellbooks-1.21.1-3.12.0.jar",
+      "published": "2025-05-04T23:44:52.113Z",
+      "sha256": "6820654278A356D509A7C247B3B59317BB90AEDCCA205500EF19C52D37D48C3B",
+      "provider": "CurseForge",
+      "publisherFileBytes": 11828112
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21.1-3.12.1",
+      "id": "uYnBmwyP",
+      "filename": "irons_spellbooks-1.21.1-3.12.1.jar",
+      "url": "https://cdn.modrinth.com/data/s4OWxYQQ/versions/uYnBmwyP/irons_spellbooks-1.21.1-3.12.1.jar",
+      "sha512": "d81bc5ff361258d8ca076a5ec9f9961c151d538c72b343bb52aa90bc8559734ceb6c653ceef36ece768411aec67424b2be8e94f294bc4e9621f77eb7323ed3be",
+      "published": "2025-05-25T20:08:27.483249Z",
+      "sha256": "5047713E36239054C07E617A522C65F432362D7677BF4AF18F5C0139AAFF6D5D"
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21.1-3.12.2",
+      "id": "iOTl8hda",
+      "filename": "irons_spellbooks-1.21.1-3.12.2.jar",
+      "url": "https://cdn.modrinth.com/data/s4OWxYQQ/versions/iOTl8hda/irons_spellbooks-1.21.1-3.12.2.jar",
+      "sha512": "57f7ff84891422f694b8c25c23bd3011aaa211a1e045aa40e151a58dfe7c85b85094e508186e6d74a57ab755cc1192654833934d3d32372576cf9f2c1343e65b",
+      "published": "2025-06-19T16:46:20.314708Z",
+      "sha256": "F4330C1E013A85C6F2146CDC86010D10148ED6FAAB7155BA0C2F6086622253ED"
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21.1-3.12.3",
+      "id": "lWV4r0pV",
+      "filename": "irons_spellbooks-1.21.1-3.12.3.jar",
+      "url": "https://cdn.modrinth.com/data/s4OWxYQQ/versions/lWV4r0pV/irons_spellbooks-1.21.1-3.12.3.jar",
+      "sha512": "615e4b381693c7ada841a80f7685530a6e477d3249e1d461e3e93dc5c28c63b316ed2ea80808bfce65696c0894943a32f491f3ef3ca75e859654ad589ce4b2b3",
+      "published": "2025-06-20T01:57:19.08099Z",
+      "sha256": "E3736E011F12B4D94AA99A0FF2040B20AD77EA227328E0F54F29E91D8396B047"
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21.1-3.13.0",
+      "id": "ffmzJG9V",
+      "filename": "irons_spellbooks-1.21.1-3.13.0.jar",
+      "url": "https://cdn.modrinth.com/data/s4OWxYQQ/versions/ffmzJG9V/irons_spellbooks-1.21.1-3.13.0.jar",
+      "sha512": "6e89d01e385cadb3c57abbc834d3d4cd2f5636a1e2971ff7ed92482e43586ff599fd4e0a200d8f101da0138503830982a1922e616170bdbda53b997ca5982b1c",
+      "published": "2025-06-28T16:44:56.326947Z",
+      "sha256": "9AFE9A1026853B5EE83211604D96B3469E227E5317A469A77D70C662E879E413"
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21.1-3.13.1",
+      "id": "cf6718356",
+      "filename": "irons_spellbooks-1.21.1-3.13.1.jar",
+      "url": "https://mediafilez.forgecdn.net/files/6718/356/irons_spellbooks-1.21.1-3.13.1.jar",
+      "published": "2025-07-01T21:15:10.993Z",
+      "sha256": "C5A4212C1E8398C6BC41336E1C59BDD2102C3742DF164426F34F381734335D36",
+      "provider": "CurseForge",
+      "publisherFileBytes": 12418400
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21.1-3.14.0",
+      "id": "cf6769020",
+      "filename": "irons_spellbooks-1.21.1-3.14.0.jar",
+      "url": "https://mediafilez.forgecdn.net/files/6769/20/irons_spellbooks-1.21.1-3.14.0.jar",
+      "published": "2025-07-14T18:59:00.42Z",
+      "sha256": "3219EFBEC86727572994027689F5230F72ED920A17C0B4211F577C73D8CA9DF7",
+      "provider": "CurseForge",
+      "publisherFileBytes": 12422424
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21.1-3.14.1",
+      "id": "cf6826052",
+      "filename": "irons_spellbooks-1.21.1-3.14.1.jar",
+      "url": "https://mediafilez.forgecdn.net/files/6826/52/irons_spellbooks-1.21.1-3.14.1.jar",
+      "published": "2025-07-29T18:06:17.153Z",
+      "sha256": "B601016D14481E305B36842A343B42E71C88951FBB7D4E4554567FF19BDA1941",
+      "provider": "CurseForge",
+      "publisherFileBytes": 12407920
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21.1-3.14.2",
+      "id": "cf6834357",
+      "filename": "irons_spellbooks-1.21.1-3.14.2.jar",
+      "url": "https://mediafilez.forgecdn.net/files/6834/357/irons_spellbooks-1.21.1-3.14.2.jar",
+      "published": "2025-08-01T00:03:07.763Z",
+      "sha256": "5DCE09663B3FF7A4059B239A5A0B38E72370A31C770BC6F225C4C9038DD3ECA4",
+      "provider": "CurseForge",
+      "publisherFileBytes": 12302999
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21.1-3.14.3",
+      "id": "cf6932556",
+      "filename": "irons_spellbooks-1.21.1-3.14.3.jar",
+      "url": "https://mediafilez.forgecdn.net/files/6932/556/irons_spellbooks-1.21.1-3.14.3.jar",
+      "published": "2025-08-27T01:13:33.497Z",
+      "sha256": "B609963015DBCB3E129319444B395E46C33291890F23B368B3A89BBF9D58AB90",
+      "provider": "CurseForge",
+      "publisherFileBytes": 12396946
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21.1-3.14.4",
+      "id": "9PTiIbvt",
+      "filename": "irons_spellbooks-1.21.1-3.14.4.jar",
+      "url": "https://cdn.modrinth.com/data/s4OWxYQQ/versions/9PTiIbvt/irons_spellbooks-1.21.1-3.14.4.jar",
+      "sha512": "93fca12e66e2b4de458c0474c26b2de7ceaf93cc91d4cca723e9ade5582d4903faa8a4e601ce58a14fc1f02f651fadd497b289506d46cea47f52b808ccc9257f",
+      "published": "2025-10-07T14:02:31.128073Z",
+      "sha256": "BCB4310AC0605703AB57A1F06B8011E8CD4E5B470461B829C090183813B596D9"
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21.1-3.14.5",
+      "id": "cf7088094",
+      "filename": "irons_spellbooks-1.21.1-3.14.5.jar",
+      "url": "https://mediafilez.forgecdn.net/files/7088/94/irons_spellbooks-1.21.1-3.14.5.jar",
+      "published": "2025-10-09T20:18:46.643Z",
+      "sha256": "9CF7DD1F8BAD037FC04C4B1ABC5A56F87BE12001AC41222740373139EBD7B915",
+      "provider": "CurseForge",
+      "publisherFileBytes": 12409269
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21.1-3.14.6",
+      "id": "cf7114204",
+      "filename": "irons_spellbooks-1.21.1-3.14.6.jar",
+      "url": "https://mediafilez.forgecdn.net/files/7114/204/irons_spellbooks-1.21.1-3.14.6.jar",
+      "published": "2025-10-16T17:55:40.58Z",
+      "sha256": "B081AF1E2A0A5EA3D58A08F16C6E3E99E3C6389038F7888791DDE72C3132CFD9",
+      "provider": "CurseForge",
+      "publisherFileBytes": 12431694
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21.1-3.14.7",
+      "id": "cf7262331",
+      "filename": "irons_spellbooks-1.21.1-3.14.7.jar",
+      "url": "https://mediafilez.forgecdn.net/files/7262/331/irons_spellbooks-1.21.1-3.14.7.jar",
+      "published": "2025-11-25T21:28:47.82Z",
+      "sha256": "72C50C7A47802A3A5EE6F7B44788FAEF2BD063D297C25A81BD863B3EA989B1DE",
+      "provider": "CurseForge",
+      "publisherFileBytes": 12528765
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21.1-3.14.8",
+      "id": "4GN2MStD",
+      "filename": "irons_spellbooks-1.21.1-3.14.8.jar",
+      "url": "https://cdn.modrinth.com/data/s4OWxYQQ/versions/4GN2MStD/irons_spellbooks-1.21.1-3.14.8.jar",
+      "sha512": "7ed9891680413913e22179a9b7e707271e97453bc4d2a23bc7a6c6da2d6572eb611b3f73e2c2ccb44326cc857335e2546c2313f6b4f41b18815ae9cc63d13f3d",
+      "published": "2025-12-07T19:15:18.674375Z",
+      "sha256": "AEC944BFA1EAB13D4A6FA5156FEB616C227CA6E16B80442CDD7D3F0CD1D55A51"
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21.1-3.15.0",
+      "id": "7vZVzEH1",
+      "filename": "irons_spellbooks-1.21.1-3.15.0.jar",
+      "url": "https://cdn.modrinth.com/data/s4OWxYQQ/versions/7vZVzEH1/irons_spellbooks-1.21.1-3.15.0.jar",
+      "sha512": "9401862b12c0b487c5486d0f65a41963021bee36c6cba164af74caa80cae7b96daff59310117f1f32235508f0ea1353f7786aeb52ba9e8b6a6ae5420144b8cb1",
+      "published": "2026-01-07T19:43:26.177318Z",
+      "sha256": "F151F71695413B4F9B106605F1FD3BB1DECDE173F9F26C6181DD01E9BCF326BE"
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21.1-3.15.1",
+      "id": "5pHjdPbv",
+      "filename": "irons_spellbooks-1.21.1-3.15.1.jar",
+      "url": "https://cdn.modrinth.com/data/s4OWxYQQ/versions/5pHjdPbv/irons_spellbooks-1.21.1-3.15.1.jar",
+      "sha512": "e96237357d2829a10f649411403fa01a600388968385e62ec39a97e04678759e85321a288779eeff40062e16309b334922dc3e9515dbf81b09a5420b46686b9d",
+      "published": "2026-01-30T19:44:37.450372Z",
+      "sha256": "F542E0DC85482ACDAF9B89D71CD9CE3B80E809CCBB47F81526414AA96B9950EE"
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21.1-3.15.2",
+      "id": "Cu7ovsnN",
+      "filename": "irons_spellbooks-1.21.1-3.15.2.jar",
+      "url": "https://cdn.modrinth.com/data/s4OWxYQQ/versions/Cu7ovsnN/irons_spellbooks-1.21.1-3.15.2.jar",
+      "sha512": "73e9d978fd64da167c902ca4bcc2a7ac1ab004aeb0dd3092da75f59eb963574037534ec516de5776ad4de1e9447ab0656111afd1d84c12e190f06d011829a318",
+      "published": "2026-01-30T23:39:49.652601Z",
+      "sha256": "FACC82F63ABCF6A30497A5CE32E10FB1FE22E9115AD8B286481FE0CDA28B65F1"
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21.1-3.15.3",
+      "id": "cf7605616",
+      "filename": "irons_spellbooks-1.21.1-3.15.3.jar",
+      "url": "https://mediafilez.forgecdn.net/files/7605/616/irons_spellbooks-1.21.1-3.15.3.jar",
+      "published": "2026-02-10T20:33:56.507Z",
+      "sha256": "E7338BE43E0AECD8EAA7236A97062721767AF661A4037B4968184C3B2F59E65C",
+      "provider": "CurseForge",
+      "publisherFileBytes": 13480874
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21.1-3.15.4",
+      "id": "cf7691161",
+      "filename": "irons_spellbooks-1.21.1-3.15.4.jar",
+      "url": "https://mediafilez.forgecdn.net/files/7691/161/irons_spellbooks-1.21.1-3.15.4.jar",
+      "published": "2026-02-28T15:38:12.7Z",
+      "sha256": "03A67D788E846B4246ABED4565B3669D74EE613F911722E263435CC2434418A1",
+      "provider": "CurseForge",
+      "publisherFileBytes": 13529099
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21.1-3.15.5",
+      "id": "sPqLXk3a",
+      "filename": "irons_spellbooks-1.21.1-3.15.5.jar",
+      "url": "https://cdn.modrinth.com/data/s4OWxYQQ/versions/sPqLXk3a/irons_spellbooks-1.21.1-3.15.5.jar",
+      "sha512": "2cedd83ec44c06c138258b8db2ebbb9e039e38584929531763fffd671abf15d55a4e35ad9039a18813a0ac03c7d0b60cdbf87dfd94aaddff218806461268f468",
+      "published": "2026-03-27T18:55:33.440245Z",
+      "sha256": "9D02DA3FC7A54D00E252A3E231CCBDD048DEF2035AF1BE911D3697AAF5FB5359"
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21.1-3.15.6",
+      "id": "GpAw0Y4D",
+      "filename": "irons_spellbooks-1.21.1-3.15.6.jar",
+      "url": "https://cdn.modrinth.com/data/s4OWxYQQ/versions/GpAw0Y4D/irons_spellbooks-1.21.1-3.15.6.jar",
+      "sha512": "8832eba72342c85db7463021ebe8514c2221512cd10592cd09784b9090bbd73af1d90dfa684b38a1ee458f11f40ca87cc182e6ce32052099c32e51608b1f9fc0",
+      "published": "2026-04-12T15:59:58.22485Z",
+      "sha256": "BA1F1986CA706AE348CB6FCE6E383AB7CC61C375826CCF0E4D3A88ED2F9FCD3D"
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21.1-3.16.0",
+      "id": "AvHIYbZi",
+      "filename": "irons_spellbooks-1.21.1-3.16.0.jar",
+      "url": "https://cdn.modrinth.com/data/s4OWxYQQ/versions/AvHIYbZi/irons_spellbooks-1.21.1-3.16.0.jar",
+      "sha512": "bab3c86be8aab6f984cd0d47c6cb3900655d529e52ec07d728e43443c9ba040920c64753fe88a3a81b37acefd7924a250fb811aed0d9aad82b5fc07efba91fc0",
+      "published": "2026-06-05T19:56:38.381869Z",
+      "sha256": "4004DAE5F352789985E77D04D0F60C7097C9917256E089B3BCB0E7E31AA87035"
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21.1-3.16.1",
+      "id": "l6y70Qts",
+      "filename": "irons_spellbooks-1.21.1-3.16.1.jar",
+      "url": "https://cdn.modrinth.com/data/s4OWxYQQ/versions/l6y70Qts/irons_spellbooks-1.21.1-3.16.1.jar",
+      "sha512": "173b9311ee01c053af9c611993eb1099f20d7b52f06e4cf0b48f32387b82c78481da9399767d1d590bbd5f9a2aa77e50ec6c004b2e6d0aab5f5626ec6744806d",
+      "published": "2026-06-15T18:32:00.968194Z",
+      "sha256": "E917DFDB9CED0CAE0E5D9C471CAE5B427855B31B0015872EC376AB2BDDE373A7"
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21.1-3.16.2",
+      "id": "RtvqnbKi",
+      "filename": "irons_spellbooks-1.21.1-3.16.2.jar",
+      "url": "https://cdn.modrinth.com/data/s4OWxYQQ/versions/RtvqnbKi/irons_spellbooks-1.21.1-3.16.2.jar",
+      "sha512": "84c3948ac4703e35e9e79d83ede0cb2345995f200909f113d08db506e0368548808f5133b45893cfa9fb855ed4e98952e9e8636d61c86f6a0198101adb7e17b4",
+      "published": "2026-07-04T21:36:57.465785Z",
+      "sha256": "82B650AFF7636C8FA88DA0E4CFEA008C229BB62843274678EE932F6B4EC74430"
+    },
+    {
+      "project": "s4OWxYQQ",
+      "version": "1.21.1-3.16.3",
+      "id": "slKLosTb",
+      "filename": "irons_spellbooks-1.21.1-3.16.3.jar",
+      "url": "https://cdn.modrinth.com/data/s4OWxYQQ/versions/slKLosTb/irons_spellbooks-1.21.1-3.16.3.jar",
+      "sha512": "fd782f98c6c59b193c4832f33775291d2a7e639e1e23dd47510bfb494d99d182bec1253566b9394f96c733a0d0108be34bd729614b82dc29e55e096fdeb96f5b",
+      "published": "2026-08-18T20:35:24.636459Z",
+      "sha256": "55A290DB9B966E0C5D2F5C051D50775F3DB6375CDB52730C4DA528BCF5D5DAA0"
+    }
+  ],
+  "helpers": [
+    {
+      "version": "9.2.0+1.21.1",
+      "filename": "curios-neoforge-9.2.0+1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/vvuO3ImH/versions/DWBpfpw1/curios-neoforge-9.2.0%2B1.21.1.jar",
+      "sha256": "1A5362673F5AA8CF03955C43C8C834720710B306883B3A6F7AE1F33752350423",
+      "folder": "legacy-curios"
+    },
+    {
+      "version": "1.21.1-1.1.0",
+      "id": "2K9JED9J",
+      "filename": "irons_lib-1.21.1-1.1.0.jar",
+      "url": "https://cdn.modrinth.com/data/9nfaJPtX/versions/2K9JED9J/irons_lib-1.21.1-1.1.0.jar",
+      "sha256": "92AA20968D51A65267218AAFE757CAE2A3330F5F552AB8594510D89FDED84989",
+      "folder": "legacy-iron-libs"
+    },
+    {
+      "version": "1.21.1-1.0.1",
+      "id": "bMwxBAZy",
+      "filename": "irons_patreon_lib-1.21.1-1.0.1.jar",
+      "url": "https://cdn.modrinth.com/data/9nfaJPtX/versions/bMwxBAZy/irons_patreon_lib-1.21.1-1.0.1.jar",
+      "sha256": "3BD681B18551A978F0F47956B83FF2734EB4B9D80F5FAD047952071400939779",
+      "folder": "legacy-iron-libs"
+    },
+    {
+      "version": "7.0.1+1.21.1",
+      "filename": "caelus-neoforge-7.0.1+1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/40FYwb4z/versions/KsfI4QsR/caelus-neoforge-7.0.1%2B1.21.1.jar",
+      "sha256": "432A645557F29DE159D9EDDE2FD109F8E3B32FF30895B4FEDE04EE5F1A1A682F",
+      "folder": "dependencies"
+    }
+  ]
+}

@@ -1,0 +1,251 @@
+def targetMc = providers.gradleProperty('targetMc').getOrElse('1.20.1')
+def generatedJava = layout.buildDirectory.dir('generated/portedJava/'+targetMc)
+tasks.register('generatePortSources') {
+    inputs.dir('../../src/main/java')
+    inputs.dir('src/common/java')
+    inputs.dir('src/compat119/java')
+    inputs.property('targetMc',targetMc)
+    outputs.dir(generatedJava)
+    doLast {
+        def output = generatedJava.get().asFile
+        if (!output.canonicalPath.startsWith(layout.buildDirectory.get().asFile.canonicalPath+File.separator)) throw new GradleException('Invalid generated source directory')
+        project.delete(output)
+        def overrides = fileTree('src/common/java').matching { include '**/*.java' }.files.collectEntries {
+            [(file('src/common/java').toPath().relativize(it.toPath()).toString().replace('\\','/')):it]
+        }
+        if (targetMc != '1.20.1') {
+            fileTree('src/compat119/java').matching { include '**/*.java' }.each { source ->
+                overrides[file('src/compat119/java').toPath().relativize(source.toPath()).toString().replace('\\','/')]=source
+            }
+        }
+        fileTree('../../src/main/java').matching { include '**/*.java' }.each { source ->
+            def relative = file('../../src/main/java').toPath().relativize(source.toPath()).toString().replace('\\','/')
+            def original = overrides.remove(relative) ?: source
+            def text = original.getText('UTF-8')
+            text = text.replace('net.neoforged.bus.api','net.minecraftforge.eventbus.api')
+                    .replace('net.neoforged.api.distmarker','net.minecraftforge.api.distmarker')
+                    .replace('net.neoforged.fml','net.minecraftforge.fml')
+                    .replace('net.neoforged.neoforge','net.minecraftforge')
+                    .replace('net.minecraftforge.common.NeoForge','net.minecraftforge.common.MinecraftForge')
+                    .replace('NeoForge.EVENT_BUS','MinecraftForge.EVENT_BUS')
+                    .replace('ModConfigSpec','ForgeConfigSpec')
+                    .replace('ResourceLocation.fromNamespaceAndPath(', 'new ResourceLocation(')
+                    .replace('ResourceLocation.parse(', 'new ResourceLocation(')
+                    .replace('ResourceLocation::parse', 'ResourceLocation::new')
+                    .replace('.getFirst()', '.get(0)')
+                    .replace('import net.minecraft.network.RegistryFriendlyByteBuf;','')
+                    .replace('RegistryFriendlyByteBuf','FriendlyByteBuf')
+                    .replace('net.minecraft.network.codec.StreamCodec','dev.sts.compat.StreamCodec')
+                    .replace('net.minecraft.network.protocol.common.custom.CustomPacketPayload','dev.sts.compat.CustomPacketPayload')
+                    .replace('SpellRegistry.REGISTRY.get(', 'SpellRegistry.REGISTRY.get().getValue(')
+            if (relative.endsWith('AdpcmCodec.java')) {
+                text = text.replace('Math.clamp(', 'clamp(')
+                text = text.replace('private AdpcmCodec() {}', 'private AdpcmCodec() {}\n    private static int clamp(int value, int low, int high) { return Math.max(low, Math.min(value, high)); }')
+            }
+            if (relative.endsWith('VoiceSpellClient.java') || relative.endsWith('SpellProgressionEvents.java')) {
+                text = text.replace('import net.minecraftforge.network.PacketDistributor;','import dev.sts.network.StsNetworking;')
+                        .replace('PacketDistributor.sendToServer(', 'StsNetworking.sendToServer(')
+                        .replace('PacketDistributor.sendToPlayer(', 'StsNetworking.sendToPlayer(')
+            }
+            if (relative.endsWith('GrimoireScreen.java')) {
+                text = text.replace('public void renderBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick)', 'public void renderBackground(GuiGraphics graphics)')
+                        .replace('public boolean mouseScrolled(double mouseX, double mouseY, double scrollX, double scrollY)', 'public boolean mouseScrolled(double mouseX, double mouseY, double scrollY)')
+                        .replace('super.mouseScrolled(mouseX, mouseY, scrollX, scrollY)', 'super.mouseScrolled(mouseX, mouseY, scrollY)')
+            }
+            if (relative.endsWith('SpellBridge.java')) {
+                text = text.replaceAll('(?m)^\\s*var marker = BuiltInRegistries.DATA_COMPONENT_TYPE.*\\R\\s*if \\(marker != null.*\\R','')
+            }
+            // Native API generations are selected once by the cached binding layer.
+            text=text.replaceAll('io\\.redspace\\.ironsspellbooks\\.api\\.(?:events|magic|registry|spells|util)\\.(SpellOnCastEvent|MagicData|SpellSelectionManager|SpellRegistry|AbstractSpell|CastSource|ISpellContainer|SpellData|Utils)', 'dev.sts.compat.IronAccess.$1')
+                    .replace('import io.redspace.ironsspellbooks.api.item.ISpellbook;', 'import dev.sts.compat.IronAccess;')
+                    .replace('import io.redspace.ironsspellbooks.item.Scroll;', '')
+                    .replace('import io.redspace.ironsspellbooks.config.ServerConfigs;', 'import dev.sts.compat.IronAccess;')
+                    .replace('player.isCreative() && !ServerConfigs.CREATIVE_MANA_COST.get()', 'player.isCreative() && !IronAccess.creativeCharges()')
+                    .replace('held.getItem() instanceof Scroll', 'IronAccess.isScroll(held)')
+                    .replace('stack.getItem() instanceof Scroll scroll', 'IronAccess.isScroll(stack)')
+                    .replace('stack.getItem() instanceof Scroll', 'IronAccess.isScroll(stack)')
+                    .replace('stack.getItem() instanceof ISpellbook', 'IronAccess.isBook(stack)')
+                    .replace('book.getItem() instanceof ISpellbook', 'IronAccess.isBook(book)')
+                    .replace('scroll.use(player.level(), player, hand);', 'stack.getItem().use(player.level(), player, hand);')
+            if(relative.endsWith('UnpreparedCasting.java')) text=text.replace('spell.getManaCost(level)', 'spell.getManaCost(level, player)')
+            if (relative.endsWith('StsMod.java')) {
+                text=text.replaceAll('(?m)^.*EVENT_BUS.addListener\\(EventPriority.LOWEST,false,SpellOnCastEvent.class,.*\\R','')
+                        .replace('StsNetworking.register();','StsNetworking.register();\n        dev.sts.compat.IronAccess.registerHooks();')
+            }
+            if (relative.endsWith('SpellProgressionEvents.java')) {
+                text = text.replace('import net.minecraftforge.event.tick.PlayerTickEvent;', 'import net.minecraftforge.event.TickEvent;')
+                        .replace('public static void tick(PlayerTickEvent.Pre event) {', 'public static void tick(TickEvent.PlayerTickEvent event) {\n        if (event.phase != TickEvent.Phase.START) return;')
+                        .replace('if (!(event.getEntity() instanceof ServerPlayer player)) return;', 'if (!(event.player instanceof ServerPlayer player)) return;')
+                        .replace('StrongSpellBroadcasts.discard(event.getEntity().getUUID());','StrongSpellBroadcasts.discard(event.getEntity().getUUID());\n        dev.sts.compat.IronAccess.forget(event.getEntity().getUUID());')
+            }
+            if (relative.endsWith('StrongSpellBroadcasts.java')) {
+                text = text.replace('import net.minecraftforge.event.tick.ServerTickEvent;', 'import net.minecraftforge.event.TickEvent;')
+                        .replace('public static void tick(ServerTickEvent.Post event) {', 'public static void tick(TickEvent.ServerTickEvent event) {\n        if (event.phase != TickEvent.Phase.END) return;')
+                        .replace('event.getServer()', 'net.minecraftforge.server.ServerLifecycleHooks.getCurrentServer()')
+            }
+            if (targetMc != '1.20.1') {
+                text=text.replace('import net.minecraft.core.registries.BuiltInRegistries;','')
+                        .replace('import net.minecraft.core.registries.Registries;','import net.minecraft.core.Registry;')
+                        .replace('Registries.ITEM','Registry.ITEM_REGISTRY')
+                        .replace('.serverLevel()', '.getLevel()')
+                        .replace('player.level()', 'player.level')
+                        .replace('Component.translatableWithFallback(', 'dev.sts.compat.LegacyText.fallback(')
+                        .replace('player.isCreative() && !ServerConfigs.CREATIVE_MANA_COST.get()', 'player.isCreative()')
+                        .replace('.defineListAllowEmpty("spells_to_broadcast", List.of(', '.defineListAllowEmpty(List.of("spells_to_broadcast"), () -> List.of(')
+                        .replace('import net.minecraft.client.gui.GuiGraphics;', 'import dev.sts.compat.GuiGraphics;\nimport com.mojang.blaze3d.vertex.PoseStack;')
+                        .replace('import net.minecraft.client.gui.components.Button;', 'import dev.sts.compat.LegacyButton;')
+                        .replace('Button', 'LegacyButton')
+                        .replace('LegacyLegacyButton','LegacyButton')
+                if (relative.endsWith('GrimoireScreen.java')) {
+                    text=text.replace('public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {',
+                                    'public void render(PoseStack pose, int mouseX, int mouseY, float partialTick) {\n        GuiGraphics graphics=new GuiGraphics(pose,this);')
+                            .replace('super.render(graphics, mouseX, mouseY, partialTick);','super.render(pose, mouseX, mouseY, partialTick);')
+                            .replace('public void renderBackground(GuiGraphics graphics)', 'public void renderBackground(PoseStack pose)')
+                            .replace('search.setHint(Component.translatable("screen.sts.search"));','')
+                }
+            }
+            if (targetMc == '1.18.2') {
+                text=text.replace('Component.translatable(', 'new net.minecraft.network.chat.TranslatableComponent(')
+                        .replace('Component.literal(', 'new net.minecraft.network.chat.TextComponent(')
+                        .replace('Component.empty()', 'new net.minecraft.network.chat.TextComponent("")')
+                        .replace('GameEvent.EXPLODE, player.position(), GameEvent.Context.of(player)', 'player, GameEvent.EXPLODE, player.blockPosition()')
+                        .replace('event.getEntity().getItem()', 'event.getEntityItem().getItem()')
+                        .replace('RegisterKeyMappingsEvent', 'net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent')
+                        .replace('import net.minecraftforge.client.event.net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;', '')
+                        .replace('event.register(OPEN_GRIMOIRE)', 'event.enqueueWork(() -> net.minecraftforge.client.ClientRegistry.registerKeyBinding(OPEN_GRIMOIRE))')
+                        .replace('ScreenEvent.KeyPressed', 'ScreenEvent.KeyboardKeyPressedEvent')
+                        .replace('ClientPlayerNetworkEvent.LoggingOut', 'ClientPlayerNetworkEvent.LoggedOutEvent')
+            }
+            def destination = new File(output,relative)
+            destination.parentFile.mkdirs()
+            destination.setText(text,'UTF-8')
+        }
+        overrides.each { relative,source ->
+            def destination = new File(output,relative)
+            destination.parentFile.mkdirs()
+            def text=source.getText('UTF-8')
+            if (targetMc=='1.18.2') text=text.replace('Component.translatable(', 'new net.minecraft.network.chat.TranslatableComponent(').replace('Component.literal(', 'new net.minecraft.network.chat.TextComponent(')
+            destination.setText(text,'UTF-8')
+        }
+    }
+}
+
+tasks.register('generatePortClientProbeSources') {
+    inputs.dir('../../src/clientProbe/java')
+    inputs.property('targetMc',targetMc)
+    outputs.dir(layout.buildDirectory.dir('generated/portedClientProbe/'+targetMc))
+    doLast {
+        def output=layout.buildDirectory.dir('generated/portedClientProbe/'+targetMc).get().asFile
+        fileTree('../../src/clientProbe/java').matching { include '**/*.java' }.each { source ->
+            def relative=file('../../src/clientProbe/java').toPath().relativize(source.toPath()).toString().replace('\\','/')
+            def text=source.getText('UTF-8')
+                    .replace('net.neoforged.neoforge','net.minecraftforge')
+                    .replace('net.neoforged.fml','net.minecraftforge.fml')
+                    .replace('net.neoforged.api.distmarker','net.minecraftforge.api.distmarker')
+                    .replace('net.neoforged.bus.api','net.minecraftforge.eventbus.api')
+                    .replace('import net.minecraftforge.common.NeoForge;','import net.minecraftforge.common.MinecraftForge;')
+                    .replace('NeoForge.EVENT_BUS','MinecraftForge.EVENT_BUS')
+                    .replace('@Mod(value = "sts", dist = Dist.CLIENT)', '@Mod("sts_client_probe")')
+                    .replace('import net.minecraftforge.client.event.RenderFrameEvent;','import net.minecraftforge.event.TickEvent;')
+                    .replace('private void rendered(RenderFrameEvent.Post event) {','private void rendered(TickEvent.RenderTickEvent event) {\n        if (event.phase != TickEvent.Phase.END) return;')
+                    .replace('ResourceLocation.fromNamespaceAndPath(', 'new ResourceLocation(')
+                    .replace('ResourceLocation.parse(', 'new ResourceLocation(')
+            // The probe is initialized explicitly by the main entrypoint, not another mod container.
+            text=text.replace('@Mod("sts_client_probe")','')
+            if (targetMc!='1.20.1') text=text.replace('import net.minecraft.client.gui.GuiGraphics;', 'import com.mojang.blaze3d.vertex.PoseStack;')
+                    .replace('renderBg(GuiGraphics graphics,', 'renderBg(PoseStack graphics,')
+                    .replace('import net.minecraft.client.gui.screens.AccessibilityOnboardingScreen;','')
+                    .replace(' || mc.screen instanceof AccessibilityOnboardingScreen','')
+                    .replace('screen.search.setFocused(', 'screen.search.setFocus(')
+            if (targetMc=='1.18.2') text=text.replace('Component.literal(', 'new net.minecraft.network.chat.TextComponent(')
+                    .replace('ScreenEvent.KeyPressed','ScreenEvent.KeyboardKeyPressedEvent')
+                    .replace('mc.options.guiScale().set(Integer.getInteger("sts.probeScale", 3))','mc.options.guiScale=Integer.getInteger("sts.probeScale", 3)')
+                    .replace('mc.options.guiScale().get()','mc.options.guiScale')
+                    .replace('screen.search.setFocused(', 'screen.search.setFocus(')
+                    .replace('TimeUnit.SECONDS.toNanos(60)','TimeUnit.SECONDS.toNanos(180)')
+            def destination=new File(output,relative)
+            destination.parentFile.mkdirs()
+            destination.setText(text,'UTF-8')
+        }
+    }
+}
+
+tasks.register('generatePortGameTestSources') {
+    inputs.dir('../../src/gameTest/java')
+    inputs.dir('src/classicGameTest/java')
+    inputs.property('targetMc',targetMc)
+    inputs.property('classicTests',providers.gradleProperty('classicTests').isPresent())
+    inputs.property('mutableIron',providers.gradleProperty('mutableIron').isPresent())
+    outputs.dir(layout.buildDirectory.dir('generated/portedGameTests/'+targetMc))
+    doLast {
+        def output=layout.buildDirectory.dir('generated/portedGameTests/'+targetMc).get().asFile
+        if (!output.canonicalPath.startsWith(layout.buildDirectory.get().asFile.canonicalPath+File.separator)) throw new GradleException('Invalid generated test directory')
+        project.delete(output)
+        def classic=targetMc=='1.18.2'||providers.gradleProperty('classicTests').isPresent()
+        fileTree('../../src/gameTest/java').matching {
+            if(classic) include '**/NativeVoiceProbe.java'
+            else include '**/SpellBridgeGameTests.java','**/BroadcastGameTests.java','**/NativeVoiceProbe.java'
+        }.each { source ->
+            def relative=file('../../src/gameTest/java').toPath().relativize(source.toPath()).toString().replace('\\','/')
+            def text=source.getText('UTF-8')
+                    .replace('net.neoforged.neoforge','net.minecraftforge')
+                    .replace('net.neoforged.fml','net.minecraftforge.fml')
+                    .replace('net.neoforged.bus.api','net.minecraftforge.eventbus.api')
+                    .replace('import net.minecraft.server.network.CommonListenerCookie;','')
+                    .replace('import net.minecraftforge.network.registration.NetworkRegistry;','')
+                    .replace('NetworkRegistry.configureMockConnection(connection);','')
+                    .replace('ResourceLocation.fromNamespaceAndPath(', 'new ResourceLocation(')
+                    .replace('ResourceLocation.parse(', 'new ResourceLocation(')
+                    .replace('SpellRegistry.REGISTRY.get(', 'SpellRegistry.REGISTRY.get().getValue(')
+                    .replace('helper.getLevel().getServer().getPlayerList().placeNewPlayer(connection, player, cookie);',
+                            'helper.getLevel().getServer().getPlayerList().placeNewPlayer(connection, player);')
+                    .replace('var cookie = CommonListenerCookie.createInitial(new GameProfile(UUID.randomUUID(), "sts-test-player"), false);',
+                            'var profile = new GameProfile(UUID.randomUUID(), "sts-test-player");')
+                    .replace('new ServerPlayer(helper.getLevel().getServer(), helper.getLevel(), cookie.gameProfile(), cookie.clientInformation())',
+                            'new ServerPlayer(helper.getLevel().getServer(), helper.getLevel(), profile)')
+            text=text.replaceAll('getAttribute\\((io\\.redspace\\.ironsspellbooks\\.api\\.registry\\.AttributeRegistry\\.[A-Z_]+)\\)', 'getAttribute($1.get())')
+            text=text.replaceAll('getAttribute\\((AttributeRegistry\\.[A-Z_]+)\\)', 'getAttribute($1.get())')
+            text=text.replaceAll('(?s)(static void setContainer\\(ItemStack stack, ISpellContainer container\\) \\{).*?\\n    \\}', '$1\n        container.save(stack);\n    }')
+            if (targetMc=='1.20.1'&&providers.gradleProperty('mutableIron').isPresent()) text=text.replace('.mutableCopy()', '').replace('.toImmutable()', '')
+                    .replaceAll('addSpellAtIndex\\(([^;]+), true\\)', 'addSpellAtIndex($1, true, ItemStack.EMPTY)')
+                    .replace('.requiresLearning()', '.needsLearning()')
+            if (targetMc != '1.20.1') {
+                text=text.replace('helper.assertTrue(', 'check(helper, ')
+                        .replace('player.level()', 'player.level')
+                        .replace('.mutableCopy()', '').replace('.toImmutable()', '')
+                        .replace('.requiresLearning()', '.needsLearning()')
+                        .replace('helper.getLevel(), profile)', 'helper.getLevel(), profile, null)')
+                        .replaceAll('addSpellAtIndex\\(([^;]+), true\\)', 'addSpellAtIndex($1, true, ItemStack.EMPTY)')
+                text=text.replaceAll('(?m)^.*warden.getVibrationData\\(\\).*\\R', '')
+                        .replaceAll('(?m)^.*warden.getVibrationUser\\(\\).*\\R', '')
+                text=text.replace('var player = new ServerPlayer(', 'initializeProfileCache(helper, profile);\n        var player = new ServerPlayer(')
+                text=text.replace('public final class SpellBridgeGameTests {', 'public final class SpellBridgeGameTests {\n    private static void check(GameTestHelper helper, boolean value, String message) { if (!value) helper.fail(message); }')
+                        .replace('public final class BroadcastGameTests {', 'public final class BroadcastGameTests {\n    private static void check(GameTestHelper helper, boolean value, String message) { if (!value) helper.fail(message); }')
+                        .replace('final class NativeVoiceProbe {', 'final class NativeVoiceProbe {\n    private static void check(GameTestHelper helper, boolean value, String message) { if (!value) helper.fail(message); }')
+                if (relative.endsWith('SpellBridgeGameTests.java')) text=text.replace('    static ServerPlayer mockSurvivalPlayer(GameTestHelper helper) {', '''
+    private static void initializeProfileCache(GameTestHelper helper, GameProfile profile) {
+        var server=helper.getLevel().getServer();
+        if (server.getProfileCache()==null) {
+            try {
+                var field=java.util.Arrays.stream(net.minecraft.server.MinecraftServer.class.getDeclaredFields())
+                    .filter(f -> f.getType()==net.minecraft.server.Services.class).findFirst().orElseThrow();
+                field.setAccessible(true);
+                var old=(net.minecraft.server.Services)field.get(server);
+                var cache=new net.minecraft.server.players.GameProfileCache((names,agent,callback) -> {},new java.io.File("sts-test-profiles.json"));
+                field.set(server,new net.minecraft.server.Services(old.sessionService(),old.serviceSignatureValidator(),old.profileRepository(),cache));
+            } catch (ReflectiveOperationException error) { throw new IllegalStateException(error); }
+        }
+        server.getProfileCache().add(profile);
+    }
+    static ServerPlayer mockSurvivalPlayer(GameTestHelper helper) {''')
+            }
+            def destination=new File(output,relative)
+            destination.parentFile.mkdirs()
+            destination.setText(text,'UTF-8')
+        }
+        if (classic) fileTree('src/classicGameTest/java').matching { include '**/*.java' }.each { source ->
+            def relative=file('src/classicGameTest/java').toPath().relativize(source.toPath()).toString()
+            def destination=new File(output,relative);destination.parentFile.mkdirs();destination.setText(source.getText('UTF-8'),'UTF-8')
+        }
+    }
+}
